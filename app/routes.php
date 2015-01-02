@@ -15,6 +15,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('/deploy','Server@deploy');
+
 Route::get('/about', function(){
     return 'About content goes here.';
 });

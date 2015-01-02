@@ -29,12 +29,12 @@ return array(
 	'connections' => array(
 
 		'production' => array(
-			'host'      => '',
-			'username'  => '',
-			'password'  => '',
+			'host'      => 'hungerexpert.in',
+			'username'  => 'atindermann08',
+			'password'  => 'hUNGEREXPERT1',
 			'key'       => '',
 			'keyphrase' => '',
-			'root'      => '/var/www',
+			'root'      => '/home/atindermann08',
 		),
 
 	),
