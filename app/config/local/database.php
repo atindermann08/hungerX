@@ -22,13 +22,13 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'homestead',
-			'username'  => 'homestead',
-			'password'  => 'secret',
+			'host'      => '127.0.0.1',
+			'database'  => 'hungerexpert',
+			'username'  => 'headmin',
+			'password'  => 'hungerpass',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
+			'prefix'    => 'he_',
 		),
 
 		'pgsql' => array(
