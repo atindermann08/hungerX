@@ -9,7 +9,8 @@ class Server extends \BaseController {
 	 */
 	public function deploy()
 	{
-		SSH::into('production')->run(array(
+		return exec('cd ~/hungerx;git pull origin master;php artisan migrate;composer update;cd ~/public_html';'git pull origin master;composer update');
+		/*SSH::into('production')->run(array(
 			'cd ~/hungerx',
 			'git pull origin master',
 			'composer update',
@@ -18,7 +19,8 @@ class Server extends \BaseController {
 			'composer update'
 		), function($line){
 			echo $line.PHP_EOL;
-		});
+		});*/
+		 
 	}
 
 

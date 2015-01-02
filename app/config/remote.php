@@ -29,9 +29,9 @@ return array(
 	'connections' => array(
 
 		'production' => array(
-			'host'      => 'hungerexpert.in',
-			'username'  => 'atindermann08',
-			'password'  => 'hUNGEREXPERT1',
+			'host'      => '',
+			'username'  => '',
+			'password'  => '',
 			'key'       => '',
 			'keyphrase' => '',
 			'root'      => '/var/www',
