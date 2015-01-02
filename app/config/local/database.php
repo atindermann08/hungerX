@@ -22,7 +22,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => '127.0.0.1',
+			'host'      => '127.0.0.1:2083',
 			'database'  => 'hungerexpert',
 			'username'  => 'headmin',
 			'password'  => 'hungerpass',
