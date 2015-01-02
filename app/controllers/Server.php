@@ -10,7 +10,7 @@ class Server extends \BaseController {
 	public function deploy()
 	{
 	
-		echo shell_exec('cd ~/hungerx');		
+		echo shell_exec('cd ~/hungerx;pwd');		
 		echo shell_exec('pwd');		
 		echo '<br/>';
 		echo shell_exec('git pull origin master');
