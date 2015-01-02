@@ -9,10 +9,11 @@ class Server extends \BaseController {
 	 */
 	public function deploy()
 	{
-		//echo exec('git pull origin master');
-
+	
 		echo exec('cd ~/hungerx');		
-		echo exec('cd');
+		echo exec('pwd');		
+		echo '<br/>';
+		echo exec('git pull origin master');
 		echo '<br/>';
 		echo exec('php artisan');
 		echo '<br/>';
