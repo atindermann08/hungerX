@@ -55,12 +55,12 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'heapp',
-			'username'  => 'root',
-			'password'  => '',
+			'database'  => 'hungerexpert',
+			'username'  => 'headmin',
+			'password'  => 'hungerpass',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
+			'prefix'    => 'he_',
 		),
 
 		'pgsql' => array(
