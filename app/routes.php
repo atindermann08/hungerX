@@ -19,6 +19,10 @@ if (file_exists(__DIR__.'/controllers/Server.php')) {
     Route::get('/deploy', 'Server@deploy');
 }
 
+Route::get('/test', function(){
+    return 'testing deployment routine.';
+});
+
 Route::get('/about', function(){
     return 'About content goes here.';
 });
