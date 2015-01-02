@@ -10,17 +10,17 @@ class Server extends \BaseController {
 	public function deploy()
 	{
 	
-		echo exec('cd ~/hungerx');		
-		echo exec('pwd');		
+		echo shell_exec('cd ~/hungerx');		
+		echo shell_exec('pwd');		
 		echo '<br/>';
-		echo exec('git pull origin master');
+		echo shell_exec('git pull origin master');
 		echo '<br/>';
-		echo exec('php artisan');
+		echo shell_exec('php artisan');
 		echo '<br/>';
-		echo exec('composer update');
+		echo shell_exec('composer update');
 		echo '<br/>';
-		echo exec('cd ~/public_html');
-		//echo exec('git pull origin master');
+		echo shell_exec('cd ~/public_html');
+		echo shell_exec('git pull origin master');
 		echo '<br/>';
 		/*SSH::into('production')->run(array(
 			'cd ~/hungerx',
