@@ -9,13 +9,18 @@ class Server extends \BaseController {
 	 */
 	public function deploy()
 	{
-		echo exec('cd ~/hungerx');
-		echo exec('git pull origin master');
-		echo exec('php artisan migrate');
+		//echo exec('git pull origin master');
+
+		echo exec('cd ~/hungerx');		
+		echo exec('cd');
+		echo '<br/>';
+		echo exec('php artisan');
+		echo '<br/>';
 		echo exec('composer update');
+		echo '<br/>';
 		echo exec('cd ~/public_html');
-		echo exec('git pull origin master');
-		echo exec('composer update');
+		//echo exec('git pull origin master');
+		echo '<br/>';
 		/*SSH::into('production')->run(array(
 			'cd ~/hungerx',
 			'git pull origin master',
