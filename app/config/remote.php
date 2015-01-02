@@ -34,7 +34,7 @@ return array(
 			'password'  => 'hUNGEREXPERT1',
 			'key'       => '',
 			'keyphrase' => '',
-			'root'      => '/home/atindermann08',
+			'root'      => '/var/www',
 		),
 
 	),
