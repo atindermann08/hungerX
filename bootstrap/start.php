@@ -26,7 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('p3plcpnl0862.prod.phx3.secureserver.net'),
+	'production' => array('p3plcpnl0862.prod.phx3.secureserver.net'),
+	'local' => array('Lenovo-PC'),
 
 ));
 

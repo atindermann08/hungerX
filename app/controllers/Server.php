@@ -10,7 +10,7 @@ class Server extends \BaseController {
 	public function deploy()
 	{
 	
-		echo shell_exec('cd ~/hungerx;git pull origin master;php artisan migrate;composer update');		
+		echo shell_exec('cd ~/hungerx;git pull origin master;php artisan migrate --force;composer update');		
 		echo '<br/>';
 		echo shell_exec('cd ~/public_html;git pull origin master');
 		echo '<br/>';
