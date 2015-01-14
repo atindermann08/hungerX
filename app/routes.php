@@ -15,18 +15,13 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-if (file_exists(__DIR__.'/controllers/Server.php')) {
-    Route::get('/deploy', 'Server@deploy');
-}
 
-Route::get('/about', function(){
-    return 'About content goes here.';
-});
 
 /*location routes*/
-Route::get('/location', function(){
-    return 'list of cities along with their areas.';
-});
+Route::get('api/locations',array('uses'=>'ApiController@locations','as'=>'api.locations'));
+
+
+
 
 Route::get('/cities', function(){
     return 'list of cities.';
@@ -96,3 +91,7 @@ Route::post('/order/:id_cart', 'addOrder');
 Route::put('/order/:id_cart', 'updateOrder');
 */
 
+
+if (file_exists(__DIR__.'/controllers/Server.php')) {
+    Route::get('/deploy', 'Server@deploy');
+}
