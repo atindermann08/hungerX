@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder {
 		//$this->call('StatesTableSeeder');
 		//$this->call('CitiesTableSeeder');
 		//$this->call('AreasTableSeeder');
+		//$this->call('CategoriesTableSeeder');
+		//$this->call('RestaurantsTableSeeder');
+		//$this->call('FoodsTableSeeder');
+		//$this->call('FoodRestaurantTableSeeder');
+		//$this->call('AreaRestaurantTableSeeder');
 	}
 
 }

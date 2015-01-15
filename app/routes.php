@@ -19,27 +19,8 @@ Route::get('/', function()
 
 /*location routes*/
 Route::get('api/locations',array('uses'=>'ApiController@locations','as'=>'api.locations'));
-
-
-
-
-Route::get('/cities', function(){
-    return 'list of cities.';
-});
-
-Route::get('/areas/{idCity}', function(){
-    return 'get list of areas in specified city';
-});
-
-
-/*restaurant routes*/
-Route::get('/restaurants/{idArea}', function(){
-    return 'get restaurants list delivering to specified area.';
-});
-
-Route::get('/restaurant/{idRestaurant}', function(){
-    return 'get restaurat details.';
-});
+Route::get('api/restaurants/{idArea}',array('uses'=>'ApiController@restaurantsByArea','as'=>'api.restaurantsbyarea'));
+Route::get('api/restaurant/{id}',array('uses'=>'ApiController@restaurant','as'=>'api.restaurant'));
 
 
 /*cart routes */

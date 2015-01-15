@@ -7,4 +7,8 @@ class Area extends \Eloquent {
     public function city(){
         return $this->belongsTo('City');
     }
+    
+    public function restaurants(){
+        return $this->belongsToMany('Restaurant');
+    }
 }
