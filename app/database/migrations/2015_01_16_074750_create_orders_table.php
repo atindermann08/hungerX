@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration {
 			$table->integer('address_id');
 			$table->boolean('payment_status');
 			$table->string('payment_type');
-			$table->string('deivery_status');
+			$table->string('delivery_status');
 			$table->timestamps();
 		});
 	}
