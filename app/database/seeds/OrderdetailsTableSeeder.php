@@ -18,7 +18,7 @@ class OrderdetailsTableSeeder extends Seeder {
 				'food_id' => $food->id,
 				'food_name' => $food->name,
 				'price' => rand(20,500),
-				'quantiry' => rand(1,4)
+				'quantity' => rand(1,4)
 			]);
 		}
 	}
