@@ -7,10 +7,20 @@ class LocationController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function locationSelect()
+	public function locationSelectCity()
 	{
-		return View::make('location.select');
+		$cities = City::all()->lists('name', 'id');
+		$areas = array('');
+		//dd($cities);
+		return View::make('location.select',array('cities' => $cities,'areas' => $areas));
 	}
+	public function locationSelectArea($idCity)
+	{
 
+		$cities = City::all()->lists('name', 'id');
+		$areas = City::find($idCity)->areas()->lists('name', 'id');
+		dd($areas);
+		return View::make('location.select',array('cities' => $cities,'areas' => $areas));
+	}
 
 }

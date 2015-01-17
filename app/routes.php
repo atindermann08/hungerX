@@ -7,7 +7,9 @@ Route::get('api/restaurant/{id}',array('uses'=>'ApiController@restaurant','as'=>
 
 
 //Basic app routes
-Route::get('/', array('uses'=>'LocationController@locationSelect','as'=>'root'));
+Route::get('/', array('uses'=>'LocationController@locationSelectCity','as'=>'select.city'));
+Route::post('/', array('uses'=>'LocationController@locationSelectArea','as'=>'select.area'));
+Route::post('/restaurants/{idArea}', array('uses'=>'RestaurantController@index','as'=>'restaurants.list'));
 
 /*cart routes */
 Route::get('/cart', function(){
