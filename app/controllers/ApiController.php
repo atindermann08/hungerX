@@ -9,20 +9,20 @@ class ApiController extends \BaseController {
 	 */
 	public function locations()
 	{
-        $cities = City::with('areas')->get();
+    $cities = City::with('areas')->get();
 		return Response::json($cities);
 	}
-    
+
     public function restaurantsByArea($idArea)
 	{
         $restaurants = Area::with('restaurants')->find($idArea);
 		return Response::json($restaurants);
 	}
-    
+
     public function restaurant($id)
 	{
         $restaurant = Restaurant::with('foods')->find($id);
 		return Response::json($restaurant);
 	}
-        
+
 }
