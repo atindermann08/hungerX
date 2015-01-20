@@ -123,7 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Zizaco\Confide\ServiceProvider',
-        
+        'Zizaco\Entrust\EntrustServiceProvider',
 
 	),
 
@@ -192,6 +192,7 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
         'Confide'           => 'Zizaco\Confide\Facade',
+        'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
 
 	),
 
