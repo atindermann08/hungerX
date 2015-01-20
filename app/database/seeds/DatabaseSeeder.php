@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder {
 		//$this->call('AddressesTableSeeder');
 		//$this->call('OrdersTableSeeder');
 		//$this->call('OrderdetailsTableSeeder');
+		
+        
 	}
 
 }
