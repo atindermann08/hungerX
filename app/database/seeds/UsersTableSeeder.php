@@ -8,6 +8,8 @@ class UsersTableSeeder extends Seeder {
 
     public function run()
     {
+        //User::truncate();
+
         //super admin
         $user = new User;
         $user->username = 'mann';
