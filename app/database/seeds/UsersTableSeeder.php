@@ -5,7 +5,7 @@ use Faker\Factory as Faker;
 
 class UsersTableSeeder extends Seeder {
 
-
+//aslo need to confirm users here
     public function run()
     {
         //User::truncate();
