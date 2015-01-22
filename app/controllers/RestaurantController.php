@@ -15,7 +15,6 @@ class RestaurantController extends \BaseController {
 		$area = Area::find($id);
 		$city = $area->city;
 		return View::make('restaurant.index',['restaurants' => $restaurants, 'area' => $area, 'city' => $city]);
-
 	}
 
 	/**
@@ -25,10 +24,10 @@ class RestaurantController extends \BaseController {
 	 * @param
 	 * @return Response
 	 */
-	public function show()
+	public function show($restaurantId)
 	{
-		$id = Input::get('area');
-		$restaurant = Restaurant::find($id);
+		$restaurant = Restaurant::with('foods')->find($restaurantId);
+		//return Response::json($restaurant);
 		return View::make('restaurant.show',['restaurant' => $restaurant]);
 
 	}

@@ -12,7 +12,7 @@ Route::post('/selectarea', array('uses'=>'LocationController@locationSelectArea'
 //Route::post('/{cityId}-{cityName}', array('uses'=>'LocationController@locationSelectArea','as'=>'select.area'));
 Route::post('/restaurants', array('uses'=>'RestaurantController@index','as'=>'restaurant.index'));
 //Route::post('/restaurants/{cityId}-{cityName}/{areaId}-{areaName}', array('uses'=>'RestaurantController@index','as'=>'restaurants.list'));
-Route::post('/restaurant', array('uses'=>'RestaurantController@show','as'=>'restaurant.show'));
+Route::get('/restaurant/{restaurantId}', array('uses'=>'RestaurantController@show','as'=>'restaurant.show'));
 
 // Confide routes
 Route::get('users/create', 'UsersController@create');

@@ -16,29 +16,29 @@
 
 
     @foreach ($restaurants as $restaurant)
-    <div class="four wide column">
-      {{ Form::open(array('method' => 'GET', 'route' => 'restaurant.show')) }}
-      <div class="ui card">
-        <div class="image">
-          <img class='img-rounded' src="assets/img/restaurants/test.jpg" alt="{{$restaurant->name}}" />
-        </div>
-        <div class="content">
-          {{$restaurant->name}}
-          <div class="description">
+      <div class="four wide column">
+        <a href="{{route('restaurant.show',$restaurant->id)}}" >
+          <div class="ui card">
+            <div class="image">
+              <img class='img-rounded' src="{{asset('assets/img/restaurants/test.jpg')}}" alt="{{$restaurant->name}}" />
+            </div>
+            <div class="content">
+              {{$restaurant->name}}
+              <div class="description">
 
+              </div>
+            </div>
+            <div class="extra content">
+              <p>
+                <ul>
+                  <li>Minimum Order: Rs.{{$restaurant->min_order}}</li>
+                  <li>Delivery Time: {{$restaurant->delivery_time}} min</li>
+                </ul>
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="extra content">
-          <p>
-            <ul>
-              <li>Minimum Order: Rs.{{$restaurant->min_order}}</li>
-              <li>Delivery Time: {{$restaurant->delivery_time}} min</li>
-            </ul>
-          </p>
-        </div>
+        </a>
       </div>
-      {{ Form::close() }}
-    </div>
     @endforeach
   </div>
 @stop
