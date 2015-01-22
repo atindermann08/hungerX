@@ -28,6 +28,7 @@ $env = $app->detectEnvironment(array(
 
 	'production' => array('p3plcpnl0862.prod.phx3.secureserver.net'),
 	'local' => array('Lenovo-PC','maninder-PC'),
+	'vostro' => array('mann-laptop'),
 
 ));
 

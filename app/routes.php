@@ -7,6 +7,7 @@ Route::get('api/restaurant/{id}',array('uses'=>'ApiController@restaurant','as'=>
 
 
 //Basic app routes
+Route::get('/test',function(){return 'tested';});
 Route::get('/', array('uses'=>'LocationController@locationSelectCity','as'=>'select.city'));
 Route::post('/selectarea', array('uses'=>'LocationController@locationSelectArea','as'=>'select.area'));
 //Route::post('/{cityId}-{cityName}', array('uses'=>'LocationController@locationSelectArea','as'=>'select.area'));

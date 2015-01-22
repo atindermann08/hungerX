@@ -11,20 +11,23 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		//$this->call('CountriesTableSeeder');
-		//$this->call('StatesTableSeeder');
-		//$this->call('CitiesTableSeeder');
-		//$this->call('AreasTableSeeder');
-		//$this->call('CategoriesTableSeeder');
-		//$this->call('RestaurantsTableSeeder');
-		//$this->call('FoodsTableSeeder');
-		//$this->call('FoodRestaurantTableSeeder');
-		//$this->call('AreaRestaurantTableSeeder');
-		//$this->call('UsersTableSeeder');
-		//$this->call('AddressesTableSeeder');
-		//$this->call('OrdersTableSeeder');
-		//$this->call('OrderdetailsTableSeeder');
-		
+        /*
+		$this->call('CountriesTableSeeder');
+		$this->call('StatesTableSeeder');
+		$this->call('CitiesTableSeeder');
+		$this->call('AreasTableSeeder');
+		$this->call('CategoriesTableSeeder');
+		$this->call('RestaurantsTableSeeder');
+		$this->call('FoodsTableSeeder');
+		$this->call('FoodRestaurantTableSeeder');
+		$this->call('AreaRestaurantTableSeeder');
+		$this->call('UsersTableSeeder');
+		$this->call('AddressesTableSeeder');
+		$this->call('OrdersTableSeeder');
+		$this->call('OrderdetailsTableSeeder');
+		$this->call('RolesTableSeeder');
+		$this->call('PermissionsTableSeeder');
+		*/
         
 	}
 
