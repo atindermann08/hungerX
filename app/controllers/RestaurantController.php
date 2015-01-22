@@ -4,7 +4,7 @@ class RestaurantController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /restaurant
+	 * GET /restaurants
 	 *
 	 * @return Response
 	 */
@@ -20,16 +20,16 @@ class RestaurantController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /restaurant/{id}
+	 * GET /restaurant
 	 *
-	 * @param  int  $id
+	 * @param
 	 * @return Response
 	 */
 	public function show()
 	{
 		$id = Input::get('area');
 		$restaurant = Restaurant::find($id);
-		return View::make('restaurant.show',['restaurants' => $restaurants]);
+		return View::make('restaurant.show',['restaurant' => $restaurant]);
 
 	}
 

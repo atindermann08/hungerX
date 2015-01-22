@@ -22,6 +22,7 @@
 <body>
 
   {{-- include header partial --}}
+  @include('partials.header')
 
   <div class="ui grid">
     <div class="column">
@@ -30,6 +31,7 @@
   </div>
 
   {{-- include footer partial --}}
+  @include('partials.footer')
 
 </body>
 </html>
