@@ -4,13 +4,18 @@
   <meta charset="utf-8">
   <title>Hunger Expert - Its food time!</title>
 
-  {{-- create styles section --}}
-  <script src="vendor/scripts/jquery-2.1.1.min.js"></script>
-  <script src="vendor/scripts/semantic.min.js"></script>
 
-  {{-- create styles section --}}
-  <link rel="stylesheet" href="vendor/style/semantic.min.css">
-  <link rel="stylesheet" href="assets/css/heapp.css">
+  {{-- scripts section --}}
+  @section('scripts')
+    <script src="vendor/scripts/jquery-2.1.1.min.js"></script>
+    <script src="vendor/scripts/semantic.min.js"></script>
+  @show
+
+  {{-- styles section --}}
+  @section('styles')
+    <link rel="stylesheet" href="vendor/style/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/heapp.css">
+  @show
 
 </head>
 

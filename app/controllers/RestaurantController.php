@@ -10,29 +10,12 @@ class RestaurantController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
-	}
+		$id = Input::get('area');
+		$restaurants = Restaurant::all();
+		$area = Area::find($id);
+		$city = $area->city;
+		return View::make('restaurant.index',['restaurants' => $restaurants, 'area' => $area, 'city' => $city]);
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /restaurant/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /restaurant
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
 	}
 
 	/**
@@ -42,45 +25,13 @@ class RestaurantController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		//
+		$id = Input::get('area');
+		$restaurant = Restaurant::find($id);
+		return View::make('restaurant.show',['restaurants' => $restaurants]);
+
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /restaurant/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /restaurant/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /restaurant/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
 
 }

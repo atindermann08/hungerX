@@ -12,7 +12,7 @@
         </div>
         <div class="field">
           <label for="area">Select Area</label>
-          {{ Form::open(array('route' => 'restaurants.list'))}}
+          {{ Form::open(array('route' => 'restaurant.index'))}}
             {{Form::select('area', array('-1' => 'Please select...') + $areas,  null, array("onchange" => "this.form.submit()"))}}
           {{ Form::close() }}
         </div>
