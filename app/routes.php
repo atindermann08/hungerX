@@ -61,9 +61,9 @@ Route::put('/order/:id_cart', 'updateOrder');
 */
 
 
-if (file_exists(__DIR__.'/controllers/Server.php')) {
+/*if (file_exists(__DIR__.'/controllers/Server.php')) {
     Route::get('/deploy', 'Server@deploy');
-}
+}*/
 //
 
 // Confide routes
