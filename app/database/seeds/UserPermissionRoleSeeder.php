@@ -3,63 +3,60 @@
 // Composer: "fzaninotto/faker": "v1.3.0"
 use Faker\Factory as Faker;
 
-class UserPermissionsRoleSeeder extends Seeder {
+class UserPermissionRoleSeeder extends Seeder {
 
   public function run()
   {
     //get users
-    $mann = User::where('username', '=', 'mann');
-    $admin = User::where('username', '=', 'admin');
-    $employee = User::where('username', '=', 'employee');
-    $employee1 = User::where('username', '=', 'employee1');
-    $restaurant = User::where('username', '=', 'restaurant');
-    $restaurant1 = User::where('username', '=', 'restaurant1');
-    $restaurant2 = User::where('username', '=', 'restaurant2');
-    $customer = User::where('username', '=', 'customer');
-    $customer1 = User::where('username', '=', 'customer1');
-    $customer2 = User::where('username', '=', 'customer2');
+    $mann = User::where('username', '=', 'mann')->first();
+    $admin = User::where('username', '=', 'admin')->first();
+    $employee = User::where('username', '=', 'employee')->first();
+    $employee1 = User::where('username', '=', 'employee1')->first();
+    $restaurant = User::where('username', '=', 'restaurant')->first();
+    $restaurant1 = User::where('username', '=', 'restaurant1')->first();
+    $restaurant2 = User::where('username', '=', 'restaurant2')->first();
+    $customer = User::where('username', '=', 'customer')->first();
+    $customer1 = User::where('username', '=', 'customer1')->first();
+    $customer2 = User::where('username', '=', 'customer2')->first();
 
     //get roles
-    $superAdminRole = Role::where('name','=','super_admin');
-    $adminRole = Role::where('name','=','admin');
-    $employeeRole = Role::where('name','=','employee');
-    $restaurantRole = Role::where('name','=','restaurant');
-    $customerRole = Role::where('name','=','customer');
+    $superAdminRole = Role::where('name','=','super_admin')->first();
+    $adminRole = Role::where('name','=','admin')->first();
+    $employeeRole = Role::where('name','=','employee')->first();
+    $restaurantRole = Role::where('name','=','restaurant')->first();
+    $customerRole = Role::where('name','=','customer')->first();
 
+      
 
     //assign roles
-    $mann->attachRole($supreAdminRole);
-    $admin->attachRole($adminRole);
-    $employee->attachRole($employeeRole);
-    $employee1->attachRole($employeeRole);
-    $restaurant->attachRole($restaurantRole);
-    $restaurant1->attachRole($restaurantRole);
-    $restaurant2->attachRole($restaurantRole);
-    $customer->attachRole($customerRole);
-    $customer1->attachRole($customerRole);
-    $customer2->attachRole($customerRole);
+    $mann->roles()->attach( $superAdminRole->id );
+    $admin->roles()->attach( $adminRole->id );
+    $employee->roles()->attach( $employeeRole->id );
+    $employee1->roles()->attach( $employeeRole->id );
+    $restaurant->roles()->attach( $restaurantRole->id );
+    $restaurant1->roles()->attach( $restaurantRole->id );
+    $restaurant2->roles()->attach( $restaurantRole->id );
+    $customer->roles()->attach( $customerRole->id );
+    $customer1->roles()->attach( $customerRole->id );
+    $customer2->roles()->attach( $customerRole->id );
       
-      
+    
     //get permissions  
-    $manageUsers = Permission::where('name','=','can_manage_users');
-    $managePermissions = Permission::where('name','=','can_manage_premissions');
-    $manageRoles = Permission::where('name','=','can_manage_roles');
-    $manageRestaurants = Permission::where('name','=','can_manage_restaurants');
-    $createRestaurants = Permission::where('name','=','can_create_restaurants');
-    $manageOrders = Permission::where('name','=','can_manage_orders');
-    $manageLocations = Permission::where('name','=','can_manage_locations');
+    $manageUsers = Permission::where('name','=','manage_users')->first();
+    $managePermissions = Permission::where('name','=','manage_permissions')->first();
+    $manageRoles = Permission::where('name','=','manage_roles')->first();
+    $manageRestaurants = Permission::where('name','=','manage_restaurants')->first();
+    $createRestaurants = Permission::where('name','=','create_restaurants')->first();
+    $manageOrders = Permission::where('name','=','manage_orders')->first();
+    $manageLocations = Permission::where('name','=','manage_locations')->first();
       
+    //dd($managePermissions->id);
     //assign permissions
-    $mann->perms()->sync([$manageUsers->id, $managePermissions->id, $manageRoles->id, $manageRestaurants->id, $manageOrders->id, $manageLocations->id]);
-    $admin->perms()->sync([$manageUsers->id, $manageRestaurants->id, $manageOrders->id, $manageLocations->id]);
-    $employee->perms()->sync([$manageRestaurants->id, $createRestaurants->id, $manageOrders->id]);
-    $employee1->perms()->sync([$manageRestaurants->id, $createRestaurants->id, $manageOrders->id]);
-    $restaurant->perms()->sync([$manageRestaurants->id, $manageOrders->id]);
-    $restaurant1->perms()->sync([$manageRestaurants->id, $manageOrders->id]);
-    $restaurant2->perms()->sync([$manageRestaurants->id, $manageOrders->id]);
-    $customer->perms()->sync([$manageOrders->id]);
-    $customer1->perms()->sync([$manageOrders->id]);
-    $customer2->perms()->sync([$manageOrders->id]);
+    $superAdminRole->perms()->sync([$manageUsers->id, $managePermissions->id, $manageRoles->id, $manageRestaurants->id, $manageOrders->id, $manageLocations->id]);
+    $adminRole->perms()->sync([$manageUsers->id, $manageRestaurants->id, $manageOrders->id, $manageLocations->id]);
+    $employeeRole->perms()->sync([$manageRestaurants->id, $createRestaurants->id, $manageOrders->id]);  
+    $restaurantRole->perms()->sync([$manageRestaurants->id, $manageOrders->id]);
+    $customerRole->perms()->sync([$manageOrders->id]);
       
 
   }

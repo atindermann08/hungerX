@@ -8,6 +8,12 @@ use Zizaco\Entrust\HasRole;
 
 class User extends Eloquent implements ConfideUserInterface
 {
-    use ConfideUser;
-    use HasRole;
+    use HasRole, ConfideUser;
+    
+    public function order(){
+        return $this->hasMany('Order');
+    }
+    public function address(){
+        return $this->hasMany('Address');
+    }
 }

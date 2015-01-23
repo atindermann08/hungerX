@@ -9,7 +9,7 @@
       </h3>
     @else
       <h3>
-        No Restaurants deliver in
+        No Restaurants deliver in {{$area->name}}, {{$city->name}}
         <small><i class="location arrow icon"></i><a href='{{route("select.city")}}'>Change delivery location.</a></small>
       </h3>
     @endif

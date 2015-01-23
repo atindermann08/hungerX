@@ -11,4 +11,8 @@ class Area extends \Eloquent {
     public function restaurants(){
         return $this->belongsToMany('Restaurant');
     }
+    
+     public function address(){
+        return $this->hasMany('Area');
+    }
 }
