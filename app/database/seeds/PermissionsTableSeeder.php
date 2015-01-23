@@ -9,8 +9,8 @@ class PermissionsTableSeeder extends Seeder {
 	{
 		//can create user
 		$permission = new Permission;
-		$permission->name = 'can_create_user';
-		$permission->display_name = 'Can Create User';
+		$permission->name = 'can_manage_users';
+		$permission->display_name = 'Can Manage Users';
 
 		if(! $permission->save()) {
 			Log::info('Unable to create permission '.$permission->name, (array)$permission->errors());
@@ -20,8 +20,8 @@ class PermissionsTableSeeder extends Seeder {
 
 		//can create role
 		$permission = new Permission;
-		$permission->name = 'can_create_role';
-		$permission->display_name = 'Can Create Role';
+		$permission->name = 'can_manage_roles';
+		$permission->display_name = 'Can Manage Roles';
 
 		if(! $permission->save()) {
 			Log::info('Unable to create permission '.$permission->name, (array)$permission->errors());
@@ -31,8 +31,8 @@ class PermissionsTableSeeder extends Seeder {
 
 		//can create permission
 		$permission = new Permission;
-		$permission->name = 'can_create_permission';
-		$permission->display_name = 'Can Create Permission';
+		$permission->name = 'can_manage_permissions';
+		$permission->display_name = 'Can Manage Permissions';
 
 		if(! $permission->save()) {
 			Log::info('Unable to create permission '.$permission->name, (array)$permission->errors());
@@ -40,10 +40,20 @@ class PermissionsTableSeeder extends Seeder {
 			Log::info('Created permission "'.$permission->name.'"');
 		}
 
-		//can create restaurant
+		//can manage restaurant
 		$permission = new Permission;
-		$permission->name = 'can_create_restaurant';
-		$permission->display_name = 'Can Create Restaurant';
+		$permission->name = 'can_create_restaurants';
+		$permission->display_name = 'Can Create Restaurants';
+
+		if(! $permission->save()) {
+			Log::info('Unable to create permission '.$permission->name, (array)$permission->errors());
+		} else {
+			Log::info('Created permission "'.$permission->name.'"');
+		}
+        
+        $permission = new Permission;
+		$permission->name = 'can_manage_restaurants';
+		$permission->display_name = 'Can Manage Restaurants';
 
 		if(! $permission->save()) {
 			Log::info('Unable to create permission '.$permission->name, (array)$permission->errors());
@@ -53,8 +63,19 @@ class PermissionsTableSeeder extends Seeder {
 
 		//can view orders
 		$permission = new Permission;
-		$permission->name = 'can_view_orders';
-		$permission->display_name = 'Can View Orders';
+		$permission->name = 'can_manage_orders';
+		$permission->display_name = 'Can Manage Orders';
+
+		if(! $permission->save()) {
+			Log::info('Unable to create permission '.$permission->name, (array)$permission->errors());
+		} else {
+			Log::info('Created permission "'.$permission->name.'"');
+		}
+
+		//can view locations
+		$permission = new Permission;
+		$permission->name = 'can_manage_locations';
+		$permission->display_name = 'Can Manage Locations';
 
 		if(! $permission->save()) {
 			Log::info('Unable to create permission '.$permission->name, (array)$permission->errors());
