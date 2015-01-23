@@ -6,7 +6,7 @@
         <div class="field">
           {{ Form::open(array('route' => 'select.area')) }}
             <label for="city">Select City</label>
-            {{Form::select('city', array('-1' => 'Please select...') + $cities,  null, array("onchange" => "this.form.submit()"))}}
+            {{Form::select('city', array('-1' => 'Please select...') + $cities,  $selectedCity , array("onchange" => "this.form.submit()"))}}
           {{ Form::close() }}
 
         </div>

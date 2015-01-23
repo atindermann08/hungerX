@@ -11,7 +11,7 @@ class RestaurantController extends \BaseController {
 	public function index()
 	{
 		$id = Input::get('area');
-		$restaurants = Restaurant::all();
+		$restaurants = Area::find($id)->restaurants;
 		$area = Area::find($id);
 		$city = $area->city;
 		return View::make('restaurant.index',['restaurants' => $restaurants, 'area' => $area, 'city' => $city]);

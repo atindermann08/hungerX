@@ -12,13 +12,14 @@ class LocationController extends \BaseController {
 		$cities = City::all()->lists('name', 'id');
 		$areas = array('');
 		//dd($cities);
-		return View::make('location.select',array('cities' => $cities,'areas' => $areas));
+		return View::make('location.select',array('cities' => $cities,'areas' => $areas, 'selectedCity' => null));
 	}
 	public function locationSelectArea()
 	{
+        $selectedCity = Input::get('city');
 		$cities = City::all()->lists('name', 'id');
 		$areas = City::find(Input::get('city'))->areas()->lists('name', 'id');
-		return View::make('location.select',array('cities' => $cities,'areas' => $areas));
+		return View::make('location.select',array('cities' => $cities,'areas' => $areas, 'selectedCity' => $selectedCity));
 	}
 
 }
