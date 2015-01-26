@@ -3,7 +3,7 @@
 @section('container')
 <div class='container'>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <div class="page-header">
                 <div class="media">
                   <div class="media-left">
@@ -18,23 +18,27 @@
                   </div>
                 </div>
             </div>
-            <h4 class="col-md-12 text-center glyphicon glyphicon-cutlery"> Menu</h4><br/>
+            <h4 class="col-md-12 text-center glyphicon glyphicon-cutlery"> Menu</h4><br/><br><br><br>
 
             <div class="col-md-12">
-               <div class="list-group">
+               <!-- <div class="list-group"> -->
                     @foreach ($restaurant->foods as $food)
-                        <i class="list-group-item">
+                        <!-- <i class="list-group-item"> -->
                             <div class="navbar-right">
                                 <b>{{$food->pivot->price}}</b>
-                                <a class="btn btn-success btn-xs"><i class="glyphicon glyphicon-plus"></i></a>
-                                &nbsp;   
-                                &nbsp;   
+                                <a class="btn btn-success btn-xs">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                </a>
+                                &nbsp;  
                             </div>
                             <h5>{{$food->name}}</h5>
-                            <p class="list-group-item-text">{{$food->description}}</p>
-                        </i>
+                                <p class="list-group-item-text">
+                                    {{$food->description}}
+                                </p>
+                            <hr>
+                        <!-- </i> -->
                     @endforeach
-                </di v>
+                <!-- </div> -->
             </div>
         </div>
         <div class="col-md-3" >
