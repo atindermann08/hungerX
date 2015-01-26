@@ -17,7 +17,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return View::make(Config::get('confide::signup_form'));
+        return View::make('users.signup');
     }
 
     /**
@@ -65,7 +65,7 @@ class UsersController extends Controller
         if (Confide::user()) {
             return Redirect::to('/');
         } else {
-            return View::make(Config::get('confide::login_form'));
+            return View::make('users.login');
         }
     }
 
@@ -123,7 +123,7 @@ class UsersController extends Controller
      */
     public function forgotPassword()
     {
-        return View::make(Config::get('confide::forgot_password_form'));
+        return View::make('users.forgot_password');
     }
 
     /**
@@ -154,7 +154,7 @@ class UsersController extends Controller
      */
     public function resetPassword($token)
     {
-        return View::make(Config::get('confide::reset_password_form'))
+        return View::make(Config::get('users.reset_password'))
                 ->with('token', $token);
     }
 
