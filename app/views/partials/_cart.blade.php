@@ -8,12 +8,12 @@
   <div class='ui horizontal divider'>
     {{$restaurant->name}}
   </div>
-  @if(!count($cart->items))
+  @if(!isset($cart) || !count($cart->items))
     <div>
       Your Order is empty...
     </div>
   @else
-    <b>
+    {{--<b>
       <div class='ui divided list'>
         @foreach ($cart->items as $item)
         <div class='item'>
@@ -53,6 +53,6 @@
       <div class="hidden content">
         Total Order Amount {{$cart->total}}
       </div>
-    </div>
+    </div>--}}
   @endif
 </div>

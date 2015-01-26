@@ -24,11 +24,16 @@
                <!-- <div class="list-group"> -->
                     @foreach ($restaurant->foods as $food)
                         <!-- <i class="list-group-item"> -->
-                            <div class="navbar-right">
-                                <b>{{$food->pivot->price}}</b>
-                                <a class="btn btn-success btn-xs">
-                                    <i class="glyphicon glyphicon-plus"></i>
-                                </a>
+                            <div class="navbar-right">                                
+                                {{ Form::open(['url' => route('addtocart')]) }}
+                                   <b>{{$food->pivot->price}}</b>
+                                    {{ Form::hidden('qty', 1) }}
+                                    {{ Form::hidden('id', $food->id) }}
+                                    {{ Form::hidden('restaurant_id', $restaurant->id) }}
+                                    <button type='submit' class="btn btn-success btn-xs">
+                                        <i class="glyphicon glyphicon-plus"></i>
+                                    </button>
+                                {{ Form::close() }}
                                 &nbsp;  
                             </div>
                             <h5>{{$food->name}}</h5>
@@ -42,7 +47,7 @@
             </div>
         </div>
         <div class="col-md-3" >
-            {{--@include('partials.cart')--}}
+            @include('partials._cart')
         </div>
     </div>
 </div>

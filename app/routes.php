@@ -27,3 +27,5 @@ Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', ['uses' => 'UsersController@logout', 'as' => 'auth.logout']);
                            
+
+Route::post('cart/add', ['uses' => 'RestaurantController@addToCart', 'as' => 'addtocart'] );
