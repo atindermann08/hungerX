@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('container')
+<div class="container-fliud"> 
 <div class="row">
     <div class="col-xs-12">
         <div class="location-selector">
@@ -44,5 +45,5 @@
             </div>
         </div>
     </div>
-</div>
+</div></div>
 @stop

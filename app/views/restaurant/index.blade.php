@@ -1,7 +1,8 @@
 @extends('layouts.default')
 
 @section('container')
-  <div class="ui page grid">
+<div class='container'>
+  <div class="row">
     @if(count($restaurants))
       <h3>
         Select from {{count($restaurants)}} Restaurants delivering in {{$area->name}}, {{$city->name}}
@@ -15,30 +16,23 @@
     @endif
 
 
-    @foreach ($restaurants as $restaurant)
-      <div class="four wide column">
-        <a href="{{route('restaurant.show',$restaurant->id)}}" >
-          <div class="ui card">
-            <div class="image">
-              <img class='img-rounded' src="{{asset('assets/img/restaurants/test.jpg')}}" alt="{{$restaurant->name}}" />
-            </div>
-            <div class="content">
-              {{$restaurant->name}}
-              <div class="description">
+    <div class="row">
+        @foreach ($restaurants as $restaurant)
+            <div class="col-sm-4 col-md-3">
+                <a href="{{route('restaurant.show',$restaurant->id)}}" class="thumbnail btn">
+                  <img class='img-rounded' src="{{asset('assets/img/restaurants/test.jpg')}}" alt="{{$restaurant->name}}" />
+                  <div class="caption">
+                    <h3>{{$restaurant->name}}</h3>
 
-              </div>
+                        <ul class='list-unstyled'>
+                          <li>Minimum Order: Rs.{{$restaurant->min_order}}</li>
+                          <li>Delivery Time: {{$restaurant->delivery_time}} min</li>
+                        </ul>
+
+                  </div>
+                </a>
             </div>
-            <div class="extra content">
-              <p>
-                <ul>
-                  <li>Minimum Order: Rs.{{$restaurant->min_order}}</li>
-                  <li>Delivery Time: {{$restaurant->delivery_time}} min</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-    @endforeach
-  </div>
+        @endforeach
+    </div>
+    </div></div>
 @stop

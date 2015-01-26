@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('container')
+<div class='container'>
   <div class="ui page grid">
     <div class="eleven wide column">
       <div class="ui orange segment">
@@ -53,5 +54,5 @@
     <div class="five wide column" >
       @include('partials.cart')
     </div>
-  </div>
+    </div></div>
 @stop
