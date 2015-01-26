@@ -27,7 +27,7 @@
   {{-- include header partial --}}
   @include('partials._header')
 
-  <!-- <div class="container"> -->
+  <!-- <div class="container-fliud"> -->
       @yield('container')
   <!-- </div> -->
 
