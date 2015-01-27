@@ -28,4 +28,5 @@ Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', ['uses' => 'UsersController@logout', 'as' => 'auth.logout']);
                            
 
-Route::post('cart/add', ['uses' => 'RestaurantController@addToCart', 'as' => 'addtocart'] );
+Route::post('cart/add', ['uses' => 'RestaurantController@addToCart', 'as' => 'cart.add'] );
+Route::get('cart/show', ['uses' => 'RestaurantController@showCart', 'as' => 'cart.show'] );

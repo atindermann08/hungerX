@@ -34,16 +34,28 @@ class RestaurantController extends \BaseController {
 
 	public function addToCart()
 	{
-		$food = Food::with('restaurant')->find(Input::get('id'));
-        dd($food->restaurant()->pivot()->price);
+		$food = Food::with(array('restaurants' => function($query)
+        {
+            $query->where('restaurants.id', '=', Input::get('restaurant_id'));
+
+        }))->find(Input::get('id'));
+        
         Cart::add([
             'id' => $food->id,
             'name' => $food->name,
             'qty' => Input::get('qty'),
-            'price' => $food->restaurant()->pivot->price,
+            'price' => $food->restaurants->first()->pivot->price
         ]);
        
        return Redirect::to('/restaurant/'.Input::get('restaurant_id'));
+                                               
+	}
+    
+    public function showCart()
+	{
+        
+        
+        return View::make('cart', ['cart' => Cart::content()]);
                                                
 	}
 

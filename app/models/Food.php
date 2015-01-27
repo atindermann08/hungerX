@@ -7,7 +7,7 @@ class Food extends \Eloquent {
         return $this->belongsTo('Category');
     }
     
-    public function restaurant(){
+    public function restaurants(){
         return $this->belongsToMany('Restaurant')->withPivot('price');
     }
     

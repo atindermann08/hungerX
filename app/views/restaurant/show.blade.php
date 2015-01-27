@@ -25,7 +25,7 @@
                     @foreach ($restaurant->foods as $food)
                         <!-- <i class="list-group-item"> -->
                             <div class="navbar-right">                                
-                                {{ Form::open(['url' => route('addtocart')]) }}
+                                {{ Form::open(['url' => route('cart.add')]) }}
                                    <b>{{$food->pivot->price}}</b>
                                     {{ Form::hidden('qty', 1) }}
                                     {{ Form::hidden('id', $food->id) }}
