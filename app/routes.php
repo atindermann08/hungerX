@@ -29,4 +29,7 @@ Route::get('users/logout', ['uses' => 'UsersController@logout', 'as' => 'auth.lo
                            
 
 Route::post('cart/add', ['uses' => 'RestaurantController@addToCart', 'as' => 'cart.add'] );
+Route::any('cart/clear', ['uses' => 'RestaurantController@clearCart', 'as' => 'cart.clear'] );
+Route::any('cart/remove', ['uses' => 'RestaurantController@removeItem', 'as' => 'cart.remove'] );
+Route::post('cart/update', ['uses' => 'RestaurantController@updateItem', 'as' => 'cart.update'] );
 Route::get('cart/show', ['uses' => 'RestaurantController@showCart', 'as' => 'cart.show'] );

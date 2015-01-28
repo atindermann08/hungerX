@@ -18,12 +18,11 @@
                   </div>
                 </div>
             </div>
-            <h4 class="col-md-12 text-center glyphicon glyphicon-cutlery"> Menu</h4><br/><br><br><br>
+            <h4 class="col-md-12 text-center glyphicon glyphicon-cutlery"> Menu</h4>
 
             <div class="col-md-12">
-               <!-- <div class="list-group"> -->
+                    <div class="navbar-right"><b></b></div><p class="list-group-item-text"></p><hr>
                     @foreach ($restaurant->foods as $food)
-                        <!-- <i class="list-group-item"> -->
                             <div class="navbar-right">                                
                                 {{ Form::open(['url' => route('cart.add')]) }}
                                    <b>{{$food->pivot->price}}</b>
@@ -34,16 +33,13 @@
                                         <i class="glyphicon glyphicon-plus"></i>
                                     </button>
                                 {{ Form::close() }}
-                                &nbsp;  
                             </div>
                             <h5>{{$food->name}}</h5>
                                 <p class="list-group-item-text">
                                     {{$food->description}}
                                 </p>
                             <hr>
-                        <!-- </i> -->
                     @endforeach
-                <!-- </div> -->
             </div>
         </div>
         <div class="col-md-3" >

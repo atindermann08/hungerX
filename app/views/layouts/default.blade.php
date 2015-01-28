@@ -16,6 +16,8 @@
   {{-- styles section --}}
   @section('styles')
     {{--<link rel="stylesheet" href="{{asset('vendor/css/semantic.min.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('vendor/codyhouse/reset.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/codyhouse/style.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/heapp.css')}}">
   @show
