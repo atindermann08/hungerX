@@ -33,4 +33,11 @@ Route::any('cart/clear/{restaurantId}', ['uses' => 'CartController@destroy', 'as
 Route::any('cart/remove', ['uses' => 'CartController@remove', 'as' => 'cart.remove'] );
 Route::post('cart/update', ['uses' => 'CartController@update', 'as' => 'cart.update'] );
 Route::get('cart/show', ['uses' => 'CartController@show', 'as' => 'cart.show'] );
-Route::get('cart/checkout', ['uses' => 'CartController@checkout', 'as' => 'cart.checkout'] );
+
+Route::any('cart/review', ['uses' => 'CartController@checkout', 'as' => 'cart.review'] );
+Route::any('cart/checkout', ['uses' => 'CartController@checkout', 'as' => 'cart.checkout'] );
+
+Route::any('customer/profile', ['uses' => 'CustomerController@profile', 'as' => 'customer.profile'] );
+Route::any('customer/change_password/{id}', ['uses' => 'CustomerController@changePassword', 'as' => 'customer.change_password'] );
+Route::any('customer/addresses/{id}', ['uses' => 'CustomerController@addresses', 'as' => 'customer.addresses'] );
+Route::any('customer/orders/{id}', ['uses' => 'CustomerController@orders', 'as' => 'customer.orders'] );

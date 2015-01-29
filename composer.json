@@ -42,7 +42,7 @@
         "zizaco/confide" : "4.0.*@dev",
         "machuga/authority-l4" : "dev-master",
         "zizaco/entrust" : "1.2.*@dev",
-        "moltin/laravel-cart": "dev-master"
+        "gloudemans/shoppingcart": "dev-master"
         
         
     }

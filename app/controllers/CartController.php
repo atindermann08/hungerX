@@ -44,5 +44,16 @@ class CartController extends \BaseController {
         Cart::instance($restaurantId)->destroy();
         return Redirect::back()->with('message', 'Cart Cleared');
 	}
+    
+    public function review($restaurantId){
+        $cart = Cart::instance($restaurantId)->content();
+        $restaurant = Restaurant::find($restaurantId);
+        $user = Confide::user();
+        return View::make();
+    }
+    
+    public function checkout(){
+    
+    }
 
 }

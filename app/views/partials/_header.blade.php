@@ -25,12 +25,24 @@
                     @if(!Confide::user())
                         <a href="{{route('auth.login')}}">
                         {{--<a class="btn" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">--}}
-                           Sign In/Register
+                           Sign In | Register
                         </a>
                     @else
-                        <a href="{{route('auth.logout')}}">
-                           Logout
-                        </a>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, {{ucfirst(Confide::user()->username)}} <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{route('customer.profile',Confide::user()->id)}}">Profile</a></li>
+                            <li><a href="{{route('customer.addresses',Confide::user()->id)}}">Addresses</a></li>
+                            <li><a href="{{route('customer.change_password',Confide::user()->id)}}">Change Password</a></li>
+                            <li><a href="{{route('customer.orders',Confide::user()->id)}}">Orders</a></li>
+                            <li class="divider"></li>
+                            <li>
+                              <a href="{{route('auth.logout')}}">
+                               Logout
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
                     @endif
                 </li>
             </ul>
