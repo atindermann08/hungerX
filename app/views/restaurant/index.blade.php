@@ -25,7 +25,7 @@
                     <h3>{{$restaurant->name}}</h3>
 
                         <ul class='list-unstyled'>
-                          <li>Minimum Order: Rs.{{$restaurant->min_order}}</li>
+                          <li>Minimum Order: &#8377; {{$restaurant->min_order}}</li>
                           <li>Delivery Time: {{$restaurant->delivery_time}} min</li>
                         </ul>
 

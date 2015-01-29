@@ -28,8 +28,9 @@ Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', ['uses' => 'UsersController@logout', 'as' => 'auth.logout']);
                            
 
-Route::post('cart/add', ['uses' => 'RestaurantController@addToCart', 'as' => 'cart.add'] );
-Route::any('cart/clear', ['uses' => 'RestaurantController@clearCart', 'as' => 'cart.clear'] );
-Route::any('cart/remove', ['uses' => 'RestaurantController@removeItem', 'as' => 'cart.remove'] );
-Route::post('cart/update', ['uses' => 'RestaurantController@updateItem', 'as' => 'cart.update'] );
-Route::get('cart/show', ['uses' => 'RestaurantController@showCart', 'as' => 'cart.show'] );
+Route::post('cart/add', ['uses' => 'CartController@add', 'as' => 'cart.add'] );
+Route::any('cart/clear/{restaurantId}', ['uses' => 'CartController@destroy', 'as' => 'cart.clear'] );
+Route::any('cart/remove', ['uses' => 'CartController@remove', 'as' => 'cart.remove'] );
+Route::post('cart/update', ['uses' => 'CartController@update', 'as' => 'cart.update'] );
+Route::get('cart/show', ['uses' => 'CartController@show', 'as' => 'cart.show'] );
+Route::get('cart/checkout', ['uses' => 'CartController@checkout', 'as' => 'cart.checkout'] );
