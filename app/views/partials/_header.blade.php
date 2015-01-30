@@ -34,7 +34,7 @@
                         </a>
                     @else
                         <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, {{ucfirst(Confide::user()->username)}} <span class="caret"></span></a>
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, {{ucfirst(Confide::user()->firstname)}} <span class="caret"></span></a>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="{{route('customer.profile')}}">Profile</a></li>
                             <li><a href="{{route('customer.addresses')}}">Addresses</a></li>

@@ -8,16 +8,16 @@ class UserPermissionRoleSeeder extends Seeder {
   public function run()
   {
     //get users
-    $mann = User::where('username', '=', 'mann')->first();
-    $admin = User::where('username', '=', 'admin')->first();
-    $employee = User::where('username', '=', 'employee')->first();
-    $employee1 = User::where('username', '=', 'employee1')->first();
-    $restaurant = User::where('username', '=', 'restaurant')->first();
-    $restaurant1 = User::where('username', '=', 'restaurant1')->first();
-    $restaurant2 = User::where('username', '=', 'restaurant2')->first();
-    $customer = User::where('username', '=', 'customer')->first();
-    $customer1 = User::where('username', '=', 'customer1')->first();
-    $customer2 = User::where('username', '=', 'customer2')->first();
+    $mann = User::where('email', 'LIKE', 'superadmin%')->first();
+    $admin = User::where('email', '=', 'admin@hungerexpert.in')->first();
+    $employee = User::where('email', 'LIKE', 'employee%')->first();
+    $employee1 = User::where('email', 'LIKE', 'employee1%')->first();
+    $restaurant = User::where('email', 'LIKE', 'restaurant%')->first();
+    $restaurant1 = User::where('email', 'LIKE', 'restaurant1%')->first();
+    $restaurant2 = User::where('email', 'LIKE', 'restaurant2%')->first();
+    $customer = User::where('email', 'LIKE', 'customer%')->first();
+    $customer1 = User::where('email', 'LIKE', 'customer1%')->first();
+    $customer2 = User::where('email', 'LIKE', 'customer2%')->first();
 
     //get roles
     $superAdminRole = Role::where('name','=','super_admin')->first();

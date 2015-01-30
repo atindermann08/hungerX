@@ -8,15 +8,15 @@ class UserValidator extends ConfideUserValidator
 {
     public $rules = [
         'create' => [  
-            'first_name' => 'required|alpha',      
-            'last_name' => 'required|alpha',
+            'firstname' => 'required|alpha',      
+            'lastname' => 'required|alpha',
             'mobile' => 'required|regex:/^(\+91)?[6-9][0-9]{9}$/',
             'email' => 'required|email',
             'password' => 'required|min:7',     
         ],
         'update' => [  
-            'first_name' => 'required|alpha',      
-            'last_name' => 'required|alpha',
+            'firstname' => 'required|alpha',      
+            'lastname' => 'required|alpha',
             'mobile' => 'required|regex:/^(\+91)?[6-9][0-9]{9}$/',
             'email' => 'required|email',
             'password' => 'required|min:7',          

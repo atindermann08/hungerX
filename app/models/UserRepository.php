@@ -21,8 +21,8 @@ class UserRepository
     {
         $user = new User;
 
-        $user->first_name = array_get($input, 'first_name');
-        $user->last_name = array_get($input, 'last_name');
+        $user->first_name = array_get($input, 'firstname');
+        $user->last_name = array_get($input, 'lastname');
         $user->mobile = array_get($input, 'mobile');
         $user->email    = array_get($input, 'email');
         $user->password = array_get($input, 'password');

@@ -7,12 +7,12 @@
                 <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
                 <fieldset>
                     <div class="form-group">
-                        <label for="first_name">First Name</label>
-                        <input class="form-control" placeholder="First Name" type="text" name="first_name" id="first_name" value="{{{ Input::old('first_name') }}}">
+                        <label for="firstname">First Name</label>
+                        <input class="form-control" placeholder="First Name" type="text" name="firstname" id="firstname" value="{{{ Input::old('firstname') }}}">
                     </div>
                     <div class="form-group">
-                        <label for="last_name">Last Name</label>
-                        <input class="form-control" placeholder="Last Name" type="text" name="last_name" id="last_name" value="{{{ Input::old('last_name') }}}">
+                        <label for="lastname">Last Name</label>
+                        <input class="form-control" placeholder="Last Name" type="text" name="lastname" id="lastname" value="{{{ Input::old('lastname') }}}">
                     </div>
                     <div class="form-group">
                         <label for="mobile">Mobile

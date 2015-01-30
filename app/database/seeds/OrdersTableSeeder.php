@@ -11,7 +11,7 @@ class OrdersTableSeeder extends Seeder {
         
 		foreach(range(1, 15) as $index)
 		{
-			$userId = User::where('username','LIKE', 'customer%')->orderBy(DB::raw('RAND()'))->first()->id;
+			$userId = User::where('email','LIKE', 'customer%')->orderBy(DB::raw('RAND()'))->first()->id;
 			$restaurantId = Restaurant::orderBy(DB::raw('RAND()'))->first()->id;
 			$addressId = Address::orderBy(DB::raw('RAND()'))->first()->id;
 
