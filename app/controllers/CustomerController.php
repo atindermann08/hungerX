@@ -4,25 +4,25 @@ class CustomerController extends \BaseController {
 
     public function profile()
 	{
-        $user = Confide::user();
-        return View::make('customer.profile',compact($user));		
+        //$user = Confide::user();
+        return View::make('customer.profile');		
 	}
 
-    public function addresses($id)
+    public function addresses()
 	{
-        $user = User::with('addresses')->find($id);
-        return View::make('customer.addresses',compact($user));
+        //$user = User::with('addresses')->find($id);
+        return View::make('customer.addresses');
 		
 	}
 
-    public function orders($id)
+    public function orders()
 	{
-        $user = User::with('orders')->find($id);
-        return View::make('customer.orders',compact($user));
+        //$user = User::with('orders')->find($id);
+        return View::make('customer.orders');
 		
 	}
     
-    public function changePassword($id)
+    public function changePassword()
 	{
         return View::make('customer.change_password');
 	}

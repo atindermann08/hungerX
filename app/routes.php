@@ -16,7 +16,7 @@ Route::post('/restaurants', array('uses'=>'RestaurantController@index','as'=>'re
 Route::get('/restaurant/{restaurantId}', array('uses'=>'RestaurantController@show','as'=>'restaurant.show'));
 
 // Confide routes
-Route::get('users/create', 'UsersController@create');
+Route::get('users/create', ['uses' => 'UsersController@create', 'as' => 'auth.signup' ]);
 Route::post('users', 'UsersController@store');
 Route::get('users/login', ['uses' => 'UsersController@login', 'as' => 'auth.login']);
 Route::post('users/login', 'UsersController@doLogin');
@@ -38,6 +38,6 @@ Route::any('cart/review', ['uses' => 'CartController@checkout', 'as' => 'cart.re
 Route::any('cart/checkout', ['uses' => 'CartController@checkout', 'as' => 'cart.checkout'] );
 
 Route::any('customer/profile', ['uses' => 'CustomerController@profile', 'as' => 'customer.profile'] );
-Route::any('customer/change_password/{id}', ['uses' => 'CustomerController@changePassword', 'as' => 'customer.change_password'] );
-Route::any('customer/addresses/{id}', ['uses' => 'CustomerController@addresses', 'as' => 'customer.addresses'] );
-Route::any('customer/orders/{id}', ['uses' => 'CustomerController@orders', 'as' => 'customer.orders'] );
+Route::any('customer/change_password', ['uses' => 'CustomerController@changePassword', 'as' => 'customer.change_password'] );
+Route::any('customer/addresses', ['uses' => 'CustomerController@addresses', 'as' => 'customer.addresses'] );
+Route::any('customer/orders', ['uses' => 'CustomerController@orders', 'as' => 'customer.orders'] );

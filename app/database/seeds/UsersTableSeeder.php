@@ -12,7 +12,9 @@ class UsersTableSeeder extends Seeder {
 
         //super admin
         $user = new User;
-        $user->username = 'mann';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9463161042';
         $user->email = 'atindermann08@gmail.com';
         $user->password = 'mann';
         $user->password_confirmation = 'mann';
@@ -27,7 +29,9 @@ class UsersTableSeeder extends Seeder {
 
         //admin
         $user = new User;
-        $user->username = 'admin';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999911111';
         $user->email = 'admin@hungerexpert.in';
         $user->password = 'hungerexpert';
         $user->password_confirmation = 'hungerexpert';
@@ -42,7 +46,9 @@ class UsersTableSeeder extends Seeder {
 
         //employees
         $user = new User;
-        $user->username = 'employee';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999922221';
         $user->email = 'employee@hungerexpert.in';
         $user->password = 'employee';
         $user->password_confirmation = 'employee';
@@ -55,7 +61,9 @@ class UsersTableSeeder extends Seeder {
         }
 
         $user = new User;
-        $user->username = 'employee1';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999922222';
         $user->email = 'employee1@hungerexpert.in';
         $user->password = 'employee1';
         $user->password_confirmation = 'employee1';
@@ -70,7 +78,9 @@ class UsersTableSeeder extends Seeder {
 
         //restaurants
         $user = new User;
-        $user->username = 'restaurant';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999933331';
         $user->email = 'restaurant@hungerexpert.in';
         $user->password = 'restaurant';
         $user->password_confirmation = 'restaurant';
@@ -83,7 +93,9 @@ class UsersTableSeeder extends Seeder {
         }
 
         $user = new User;
-        $user->username = 'restaurant1';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999933332';
         $user->email = 'restaurant1@hungerexpert.in';
         $user->password = 'restaurant1';
         $user->password_confirmation = 'restaurant1';
@@ -96,7 +108,9 @@ class UsersTableSeeder extends Seeder {
         }
 
         $user = new User;
-        $user->username = 'restaurant2';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999933333';
         $user->email = 'restaurant2@hungerexpert.in';
         $user->password = 'restaurant2';
         $user->password_confirmation = 'restaurant2';
@@ -112,7 +126,9 @@ class UsersTableSeeder extends Seeder {
 
         //customers
         $user = new User;
-        $user->username = 'customer';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999944441';
         $user->email = 'customer@hungerexpert.in';
         $user->password = 'customer';
         $user->password_confirmation = 'customer';
@@ -125,7 +141,9 @@ class UsersTableSeeder extends Seeder {
         }
 
         $user = new User;
-        $user->username = 'customer1';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999944442';
         $user->email = 'customer1@hungerexpert.in';
         $user->password = 'customer1';
         $user->password_confirmation = 'customer1';
@@ -138,7 +156,9 @@ class UsersTableSeeder extends Seeder {
         }
 
         $user = new User;
-        $user->username = 'customer2';
+        $user->first_name = $faker->firstName();
+        $user->last_name = $faker->lastName();
+        $user->mobile = '9999944443';
         $user->email = 'customer2@hungerexpert.in';
         $user->password = 'customer2';
         $user->password_confirmation = 'customer2';

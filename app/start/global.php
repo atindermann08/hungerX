@@ -1,5 +1,8 @@
 <?php
 
+
+App::bind('confide.user_validator', 'UserValidator');
+App::bind('confide.repository', 'MyEloquentRepository');
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader

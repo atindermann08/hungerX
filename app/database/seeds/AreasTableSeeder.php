@@ -12,7 +12,7 @@ class AreasTableSeeder extends Seeder {
 		foreach(range(1, 12) as $index)
 		{
 			Area::create([
-                'name' =>  array('Sector ','Phase ')[rand(0,1)].rand(1,10),
+                'name' =>  'Sector '.rand(1,10),
                 'city_id' => rand(1,4)                
 			]);
 		}

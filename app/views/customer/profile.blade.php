@@ -7,24 +7,11 @@
                 <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
                 <fieldset>
                     <div class="form-group">
-                        <label for="first_name">First Name</label>
-                        <input class="form-control" placeholder="First Name" type="text" name="first_name" id="first_name" value="{{{ Input::old('first_name') }}}">
+                        <label for="username">{{{ Lang::get('confide::confide.username') }}}</label>
+                        <input class="form-control" placeholder="{{{ Lang::get('confide::confide.username') }}}" type="text" name="username" id="username" value="{{{ Input::old('username') }}}">
                     </div>
                     <div class="form-group">
-                        <label for="last_name">Last Name</label>
-                        <input class="form-control" placeholder="Last Name" type="text" name="last_name" id="last_name" value="{{{ Input::old('last_name') }}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="mobile">Mobile
-                        <small>{{ Lang::get('confide::confide.signup.confirmation_required') }}</small>
-                        </label>
-                        <input class="form-control" placeholder="Mobile" type="text" name="mobile" id="mobile" value="{{{ Input::old('mobile') }}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">
-                        {{{ Lang::get('confide::confide.e_mail') }}} 
-                        <small>{{ Lang::get('confide::confide.signup.confirmation_required') }}</small>
-                        </label>
+                        <label for="email">{{{ Lang::get('confide::confide.e_mail') }}} <small>{{ Lang::get('confide::confide.signup.confirmation_required') }}</small></label>
                         <input class="form-control" placeholder="{{{ Lang::get('confide::confide.e_mail') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
                     </div>
                     <div class="form-group">

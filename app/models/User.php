@@ -10,6 +10,7 @@ class User extends Eloquent implements ConfideUserInterface
 {
     use HasRole, ConfideUser;
     
+    
     public function orders(){
         return $this->hasMany('Order');
     }

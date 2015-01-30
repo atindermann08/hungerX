@@ -39,7 +39,7 @@
         "way/generators" : "~2.0",
         "fzaninotto/faker" : "1.5.*@dev",
         "cartalyst/sentry" : "2.1.*",
-        "zizaco/confide" : "4.0.*@dev",
+        "zizaco/confide": "~4.0@dev",
         "machuga/authority-l4" : "dev-master",
         "zizaco/entrust" : "1.2.*@dev",
         "gloudemans/shoppingcart": "~1.2"
