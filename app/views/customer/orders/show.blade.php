@@ -66,7 +66,7 @@
                                		<div class="navbar-right">                        
                                 		<b>&#8377; {{$item->price}}</b>
 									</div>
-									<h5>{{$item->food_name}} x {{$item->quantity}} </h5>
+									<h5>{{$item->name}} x {{$item->quantity}} </h5>
 									<hr>
 							 	</li>
 						 	@endforeach
