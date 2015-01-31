@@ -12,7 +12,7 @@ class OrdersTableSeeder extends Seeder {
         $userId = User::where('email','LIKE', 'demo%')->orderBy(DB::raw('RAND()'))->first()->id;
         $restaurantId = Restaurant::orderBy(DB::raw('RAND()'))->first()->id;
         $addressId = Address::orderBy(DB::raw('RAND()'))->first()->id;
-
+		
         Order::create([
             'user_id' => $userId,
             'restaurant_id' => $restaurantId,

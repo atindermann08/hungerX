@@ -13,12 +13,12 @@
 
         <div class="navbar-collapse collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="{{route("select.city")}}">Home</a>
+                <li>
+                    <a href="{{route('select.city')}}">Home</a>
                 </li>
 
                 <li>
-                    <a href="{{url("/blog")}}">Blog</a>
+                    <a href="{{url('/blog')}}">Blog</a>
                 </li>
 
                 <li>
@@ -39,7 +39,7 @@
                             <li><a href="{{route('customer.profile')}}">Profile</a></li>
                             <li><a href="{{route('customer.address.index')}}">Addresses</a></li>
                             <li><a href="{{route('customer.password.change')}}">Change Password</a></li>
-                            <li><a href="{{route('customer.orders')}}">Orders</a></li>
+                            <li><a href="{{route('customer.orders.index')}}">Orders</a></li>
                             <li class="divider"></li>
                             <li>
                               <a href="{{route('auth.logout')}}">

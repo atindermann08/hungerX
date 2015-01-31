@@ -81,7 +81,7 @@
                         @if (Session::get('success'))
                             <div class="alert alert-success">{{ Session::get('success') }}</div>
                         @endif
-                        {{ Form::submit('Update Profile!', ['class' => "btn btn-warning" ]) }}
+                        {{ Form::submit('Add Address', ['class' => "btn btn-warning btn-block" ]) }}
                     </div>
 
             {{ Form::close() }}

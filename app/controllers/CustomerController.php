@@ -7,14 +7,6 @@ class CustomerController extends \BaseController {
         $user = Confide::user();
         return View::make('customer.profile', ['user' => $user]);		
 	}
-
-
-    public function orders()
-	{
-        //$user = User::with('orders')->find($id);
-        return View::make('customer.orders');
-		
-	}
     
     public function changePassword()
 	{

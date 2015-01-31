@@ -27,7 +27,7 @@
                 @endif
 
                 <div class="form-actions form-group">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary btn-block">
                         Save
                     </button>
                 </div>

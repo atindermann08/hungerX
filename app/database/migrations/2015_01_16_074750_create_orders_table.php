@@ -19,6 +19,10 @@ class CreateOrdersTable extends Migration {
 			$table->integer('restaurant_id');
 			$table->string('order_number');
 			$table->integer('address_id');
+			$table->boolean('pickup')->default(false);
+			$table->boolean('delivery_later')->default(false);
+			$table->date('delivery_date')->nullable;
+			$table->time('delivery_time')->nullable;
 			$table->boolean('payment_status');
 			$table->string('payment_type');
 			$table->string('delivery_status');

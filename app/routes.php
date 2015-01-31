@@ -114,9 +114,26 @@ Route::any(
 
 
 //orders
-Route::any(
+Route::get(
 	'customer/orders', 
 	[
-		'uses' => 'CustomerController@orders', 
-		'as' => 'customer.orders'
-	] );
+		'uses' => 'OrderController@index', 
+		'as' => 'customer.orders.index'
+	]);
+
+Route::get(
+	'customer/orders/{id}', 
+	[
+		'uses' => 'OrderController@show', 
+		'as' => 'customer.orders.show'
+	]);
+
+
+
+
+
+
+
+
+
+

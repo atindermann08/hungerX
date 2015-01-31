@@ -13,13 +13,13 @@ class ApiController extends \BaseController {
 		return Response::json($cities);
 	}
 
-  public function restaurantsByArea($idArea)
+	public function restaurantsByArea($idArea)
 	{
     $restaurants = Area::with('restaurants')->find($idArea);
 		return Response::json($restaurants);
 	}
 
-  public function restaurant($id)
+	public function restaurant($id)
 	{
     $restaurant = Restaurant::with('foods')->find($id);
 		return Response::json($restaurant);

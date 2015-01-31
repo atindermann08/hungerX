@@ -18,7 +18,7 @@
 
     <div class="row">
         @foreach ($addresses as $address)
-            <div class="col-sm-4 col-md-3">
+            <div class="col-sm-3">
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h3 class="panel-title">{{ $address->name }}</h3>
