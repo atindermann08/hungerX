@@ -8,7 +8,7 @@ class UserPermissionRoleSeeder extends Seeder {
   public function run()
   {
     //get users
-    $mann = User::where('email', 'LIKE', 'superadmin%')->first();
+    $mann = User::where('email', 'LIKE', 'demo%')->first();
     $admin = User::where('email', '=', 'admin@hungerexpert.in')->first();
     $employee = User::where('email', 'LIKE', 'employee%')->first();
     $employee1 = User::where('email', 'LIKE', 'employee1%')->first();

@@ -34,13 +34,89 @@ Route::any('cart/remove', ['uses' => 'CartController@remove', 'as' => 'cart.remo
 Route::post('cart/update', ['uses' => 'CartController@update', 'as' => 'cart.update'] );
 Route::get('cart/show', ['uses' => 'CartController@show', 'as' => 'cart.show'] );
 
-Route::any('cart/review', ['uses' => 'CartController@checkout', 'as' => 'cart.review'] );
-Route::any('cart/checkout', ['uses' => 'CartController@checkout', 'as' => 'cart.checkout'] );
+Route::any(
+	'cart/review', 
+	[
+		'uses' => 'CartController@checkout', 
+		'as' => 'cart.review'
+	] );
+Route::any(
+	'cart/checkout', 
+	[
+		'uses' => 'CartController@checkout', 
+		'as' => 'cart.checkout'
+	] );
 
-Route::get('customer/profile', ['uses' => 'CustomerController@profile', 'as' => 'customer.profile'] );
-Route::post('customer/profile/{id}', ['uses' => 'CustomerController@doUpdateProfile', 'as' => 'customer.profile.doUpdate'] );
+Route::get(
+	'customer/profile', 
+	[
+		'uses' => 'CustomerController@profile', 
+		'as' => 'customer.profile'
+	] );
+Route::post(
+	'customer/profile/{id}', 
+	[
+		'uses' => 'CustomerController@doUpdateProfile', 
+		'as' => 'customer.profile.doUpdate'
+	] );
 
-Route::get('customer/change_password', ['uses' => 'CustomerController@changePassword', 'as' => 'customer.password.change'] );
-Route::post('customer/change_password/{id}', ['uses' => 'CustomerController@doChangePassword', 'as' => 'customer.password.doChange'] );
-Route::any('customer/addresses', ['uses' => 'CustomerController@addresses', 'as' => 'customer.addresses'] );
-Route::any('customer/orders', ['uses' => 'CustomerController@orders', 'as' => 'customer.orders'] );
+Route::get(
+	'customer/change_password', 
+	[
+		'uses' => 'CustomerController@changePassword', 
+		'as' => 'customer.password.change'
+	] );
+Route::post(
+	'customer/change_password/{id}', 
+	[
+		'uses' => 'CustomerController@doChangePassword', 
+		'as' => 'customer.password.doChange'
+	] );
+
+
+//address
+Route::get(
+	'customer/addresses', 
+	[
+		'uses' => 'AddressController@index', 
+		'as' => 'customer.address.index'
+	] );
+Route::get(
+	'customer/addresses/add', 
+	[
+		'uses' => 'AddressController@add', 
+		'as' => 'customer.address.add'
+	] );
+Route::post(
+	'customer/addresses/add', 
+	[
+		'uses' => 'AddressController@doAdd', 
+		'as' => 'customer.address.doAdd'
+	] );
+Route::get(
+	'customer/addresses/edit/{id}', 
+	[
+		'uses' => 'AddressController@edit', 
+		'as' => 'customer.address.edit'
+	] );
+Route::post(
+	'customer/addresses/edit/{id}', 
+	[
+		'uses' => 'AddressController@doEdit', 
+		'as' => 'customer.address.doEdit'
+	] );
+Route::any(
+	'customer/addresses/default/{id}', 
+	[
+		'uses' => 'AddressController@setDefault', 
+		'as' => 'customer.address.default'
+	] );
+
+
+//orders
+Route::any(
+	'customer/orders', 
+	[
+		'uses' => 'CustomerController@orders', 
+		'as' => 'customer.orders'
+	] );

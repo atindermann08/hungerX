@@ -13,12 +13,12 @@ class UsersTableSeeder extends Seeder {
         
         //super admin
         $user = new User;
-        $user->firstname = $faker->firstName();
-        $user->lastname = $faker->lastName();
+        $user->firstname = 'Demo';
+        $user->lastname = 'Mod';
         $user->mobile = '9463161042';
-        $user->email = 'superadmin@hungerexpert.in';
-        $user->password = 'superadmin';
-        $user->password_confirmation = 'superadmin';
+        $user->email = 'demo@hungerexpert.in';
+        $user->password = 'demodemo';
+        $user->password_confirmation = 'demodemo';
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
         $user->confirmed = true;
 

@@ -9,7 +9,7 @@ class AddressesTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+		foreach(range(1, 15) as $index)
 		{
 			$userId = User::orderBy(DB::raw('RAND()'))->first()->id;
 			$areaId = Area::orderBy(DB::raw('RAND()'))->first()->id;

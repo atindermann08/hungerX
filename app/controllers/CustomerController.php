@@ -8,12 +8,6 @@ class CustomerController extends \BaseController {
         return View::make('customer.profile', ['user' => $user]);		
 	}
 
-    public function addresses()
-	{
-        //$user = User::with('addresses')->find($id);
-        return View::make('customer.addresses');
-		
-	}
 
     public function orders()
 	{

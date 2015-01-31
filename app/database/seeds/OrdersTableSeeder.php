@@ -9,6 +9,20 @@ class OrdersTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
         
+        $userId = User::where('email','LIKE', 'demo%')->orderBy(DB::raw('RAND()'))->first()->id;
+        $restaurantId = Restaurant::orderBy(DB::raw('RAND()'))->first()->id;
+        $addressId = Address::orderBy(DB::raw('RAND()'))->first()->id;
+
+        Order::create([
+            'user_id' => $userId,
+            'restaurant_id' => $restaurantId,
+            'order_number' => rand(89123131,321312414),
+            'address_id' => $addressId,
+            'payment_status' => 'Pending',
+            'payment_type' => 'Online',
+            'delivery_status' => 'Under Processing'
+        ]);
+        
 		foreach(range(1, 15) as $index)
 		{
 			$userId = User::where('email','LIKE', 'customer%')->orderBy(DB::raw('RAND()'))->first()->id;
