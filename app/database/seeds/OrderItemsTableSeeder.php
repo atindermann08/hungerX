@@ -18,7 +18,7 @@ class OrderItemsTableSeeder extends Seeder {
                 $q = rand(1,4);
                 $order->items()->save(OrderItem::create([
 				'food_id' => $food->id,
-				'food_name' => $food->name,
+				'name' => $food->name,
 				'price' => ((rand(40,400)/10)*10),
 				'quantity' => $q
 			]));
