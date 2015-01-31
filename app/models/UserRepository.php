@@ -129,4 +129,37 @@ class UserRepository
     {
         return $instance->save();
     }
+    
+    /*
+    public function doChangePassword($id){
+        $rules = array(
+            'current_password'          => 'required',
+            'password'                  => 'required|confirmed|different:current_password',
+            'password_confirmation'     => 'required|different:current_password|same:password'
+        );
+
+        $user = User::find(Auth::user()->id);
+        $validator = Validator::make(Input::all(), $rules);
+
+        //Is the input valid? password confirmed and meets requirements
+        if ($validator->fails()) {
+            Session::flash('validationErrors', $validator->messages());
+            return Redirect::back()->withInput();
+        }
+
+        //Is the old password correct?
+        if(!Hash::check(Input::get('current_password'), $user->password)){
+            return Redirect::back()->withInput()->withError('Password is not correct.');
+        }
+
+        //Set new password to user
+        $user->password = Input::get('password');
+        $user->password_confirmation = Input::get('password_confirmation');
+
+        $user->touch();
+        $save = $user->save();
+
+        return Redirect::to('logout')->withMessage('Password has been changed.');
+
+    }*/
 }
