@@ -37,7 +37,9 @@ Route::get('cart/show', ['uses' => 'CartController@show', 'as' => 'cart.show'] )
 Route::any('cart/review', ['uses' => 'CartController@checkout', 'as' => 'cart.review'] );
 Route::any('cart/checkout', ['uses' => 'CartController@checkout', 'as' => 'cart.checkout'] );
 
-Route::any('customer/profile', ['uses' => 'CustomerController@profile', 'as' => 'customer.profile'] );
+Route::get('customer/profile', ['uses' => 'CustomerController@profile', 'as' => 'customer.profile'] );
+Route::post('customer/profile/{id}', ['uses' => 'CustomerController@doUpdateProfile', 'as' => 'customer.profile.doUpdate'] );
+
 Route::get('customer/change_password', ['uses' => 'CustomerController@changePassword', 'as' => 'customer.password.change'] );
 Route::post('customer/change_password/{id}', ['uses' => 'CustomerController@doChangePassword', 'as' => 'customer.password.doChange'] );
 Route::any('customer/addresses', ['uses' => 'CustomerController@addresses', 'as' => 'customer.addresses'] );

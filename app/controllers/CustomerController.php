@@ -4,8 +4,8 @@ class CustomerController extends \BaseController {
 
     public function profile()
 	{
-        //$user = Confide::user();
-        return View::make('customer.profile');		
+        $user = Confide::user();
+        return View::make('customer.profile', ['user' => $user]);		
 	}
 
     public function addresses()
@@ -56,6 +56,36 @@ class CustomerController extends \BaseController {
         $save = $user->save();
 
         return Redirect::to('users/logout')->withMessage('Password has been changed.');
+
+    }
+    
+    public function doUpdateProfile($id){
+        $rules = array(
+            'firstname' => 'required|alpha',      
+            'lastname' => 'required|alpha',
+            'mobile' => 'required|regex:/^(\+91)?[6-9][0-9]{9}$/',
+            'email' => 'required|email',
+        );
+
+        $user = User::find(Confide::user()->id);
+        $validator = Validator::make(Input::all(), $rules);
+
+        //Is the input valid? password confirmed and meets requirements
+        if ($validator->fails()) {
+            Session::flash('error', $validator->messages()->first());
+            return Redirect::back()->withInput();
+        }
+
+        //Set new password to user
+        $user->firstname = Input::get('firstname');
+        $user->lastname = Input::get('lastname');
+        $user->mobile = Input::get('mobile');
+        $user->email = Input::get('email');
+
+        $user->touch();
+        $save = $user->save();
+
+        return Redirect::back()->withSuccess('Profile updated successfuly.');
 
     }
 
