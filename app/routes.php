@@ -55,6 +55,9 @@ Route::get(
 		'uses' => 'CartController@show',
 		'as' => 'cart.show'
 	] );
+
+Route::group(array('before' => 'customer'), function()
+{
 Route::any(
 	'cart/review/{restaurantId}',
 	[
@@ -150,3 +153,4 @@ Route::get(
 		'uses' => 'OrderController@show',
 		'as' => 'customer.orders.show'
 	]);
+});

@@ -33,6 +33,18 @@ App::after(function($request, $response)
 |
 */
 
+Route::filter('customer', function()
+{
+	if (Auth::guest())
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		return Redirect::guest('users/login');
+	}
+});
+
 Route::filter('auth', function()
 {
 	if (Auth::guest())
