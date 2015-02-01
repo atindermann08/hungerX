@@ -3,7 +3,11 @@
 		<ul class="cd-cart-items">
             @if(!isset($cart) || !count($cart))
                 <li>
-                  Your Order is empty...
+                 	<p>
+                 		<br>
+                  		Your Order is empty...
+						<br>
+               		</p>
                 </li>
             @else
                 @foreach($cart as $item)
@@ -26,6 +30,16 @@
 			<p>Total <span>&#8377; {{ $total }}</span></p>
 		</div> <!-- cd-cart-total -->
 
-		<a href="#0" class="checkout-btn">Checkout</a>
-		<p class="cd-go-to-cart"><a href="{{route('cart.clear',$restaurant->id)}}">Clear Cart</a></p>
-	</div>
+		<a href="#0" class="checkout-btn 
+			@if( $total < $restaurant->min_order )
+				btn btn-succcess-o disabled"> Minimum Order is &#8377; {{ $restaurant->min_order }}</a>
+			@else
+				">Proceed</a>
+			@endif
+		<p class="cd-go-to-cart">
+			<a href="{{route('cart.clear',$restaurant->id)}}" 
+				class='btn btn-danger-o btn-sm @if(!count($cart)) disabled @endif'>
+					Clear Cart
+			</a>
+		</p>
+	</div> 

@@ -19,7 +19,7 @@ class CreateFoodRestaurantTable extends Migration {
 			$table->foreign('food_id')->references('id')->on('foods')->onDelete('cascade');
 			$table->integer('restaurant_id')->unsigned()->index();
 			$table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
-			$table->float('price', 10,2);
+			$table->float('price');
 			$table->timestamps();
 		});
 	}

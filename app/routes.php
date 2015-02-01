@@ -28,16 +28,37 @@ Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', ['uses' => 'UsersController@logout', 'as' => 'auth.logout']);
                            
 
-Route::post('cart/add', ['uses' => 'CartController@add', 'as' => 'cart.add'] );
-Route::any('cart/clear/{restaurantId}', ['uses' => 'CartController@destroy', 'as' => 'cart.clear'] );
-Route::any('cart/remove', ['uses' => 'CartController@remove', 'as' => 'cart.remove'] );
-Route::post('cart/update', ['uses' => 'CartController@update', 'as' => 'cart.update'] );
-Route::get('cart/show', ['uses' => 'CartController@show', 'as' => 'cart.show'] );
-
+//cart
+Route::post(
+	'cart/add', 
+	['uses' => 'CartController@add', 
+	 'as' => 'cart.add'
+	] );
+Route::any(
+	'cart/clear/{restaurantId}', 
+	['uses' => 'CartController@destroy', 
+	 'as' => 'cart.clear'
+	] );
+Route::any(
+	'cart/remove', 
+	['uses' => 'CartController@remove', 
+	 'as' => 'cart.remove'
+	] );
+Route::post(
+	'cart/update', 
+	['uses' => 'CartController@update', 
+	 'as' => 'cart.update'
+	] );
+Route::get(
+	'cart/show', 
+	[
+		'uses' => 'CartController@show', 
+		'as' => 'cart.show'
+	] );
 Route::any(
 	'cart/review', 
 	[
-		'uses' => 'CartController@checkout', 
+		'uses' => 'CartController@review', 
 		'as' => 'cart.review'
 	] );
 Route::any(
@@ -47,6 +68,8 @@ Route::any(
 		'as' => 'cart.checkout'
 	] );
 
+
+//custoer profile
 Route::get(
 	'customer/profile', 
 	[
@@ -74,7 +97,7 @@ Route::post(
 	] );
 
 
-//address
+//customer address
 Route::get(
 	'customer/addresses', 
 	[

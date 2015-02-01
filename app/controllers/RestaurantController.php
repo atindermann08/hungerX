@@ -30,7 +30,13 @@ class RestaurantController extends \BaseController {
 		//return Response::json($restaurant);
         $cart = Cart::instance($restaurantId)->content();
             //return Response::json($cart);
-		return View::make('restaurant.show', ['restaurant' => $restaurant, 'cart' => $cart, 'total' => Cart::total()]);
+		return View::make(
+				'restaurant.show', 
+				[
+					'restaurant' => $restaurant, 
+					'cart' => $cart, 
+					'total' => Cart::total()
+				]);
 
 	}
 

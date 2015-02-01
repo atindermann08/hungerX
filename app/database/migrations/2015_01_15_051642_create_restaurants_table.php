@@ -19,8 +19,8 @@ class CreateRestaurantsTable extends Migration {
 			$table->text('description', 500);
 			$table->integer('area_id');
 			$table->boolean('pure_veg');
-			$table->float('min_order', 10,2);
-			$table->float('delivery_fee', 10,2);
+			$table->float('min_order');
+			$table->float('delivery_fee');
 			$table->integer('delivery_time')->unsigned();
 			$table->boolean('online_payment');
 			$table->boolean('cash_on_delivery');
