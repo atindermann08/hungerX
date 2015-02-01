@@ -35,7 +35,7 @@ class RestaurantController extends \BaseController {
 				[
 					'restaurant' => $restaurant, 
 					'cart' => $cart, 
-					'total' => Cart::total()
+					'total' => Cart::instance($restaurantId)->total()
 				]);
 
 	}

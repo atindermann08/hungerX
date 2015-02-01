@@ -30,7 +30,7 @@
 			<p>Total <span>&#8377; {{ $total }}</span></p>
 		</div> <!-- cd-cart-total -->
 
-		<a href="#0" class="checkout-btn 
+		<a href="{{ route('cart.review', $restaurant->id) }}" class="checkout-btn 
 			@if( $total < $restaurant->min_order )
 				btn btn-succcess-o disabled"> Minimum Order is &#8377; {{ $restaurant->min_order }}</a>
 			@else

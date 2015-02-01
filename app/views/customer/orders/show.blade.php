@@ -4,13 +4,13 @@
 <div class='container'>
 
     <div class="row">
-            <div class="col-sm-6 col-md-offset-3"><h3>
-				Your Order Details 
-				<small><i class="location arrow icon"></i><a href='{{url("/")}}'>Order Some more!</a></small>
-			  </h3>
+            <div class="col-sm-6 col-md-offset-3">
+            	<h3>
+					Your Order Details 
+			  	</h3>
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<h3 class="panel-title">Order number: {{ $order->order_number }}</h3>
+						<h3 class="panel-title">Order number: {{ $order->id }}</h3>
 					</div>
 					 <div class="panel-body">
 					 	<div class='col-md-12'>

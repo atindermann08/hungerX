@@ -21,7 +21,7 @@
             <div class="col-sm-6">
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<h3 class="panel-title">Order number: {{ $order->order_number }}</h3>
+						<h3 class="panel-title">Order number: {{ $order->id }}</h3>
 					</div>
 					 <div class="panel-body">
 							<div class="media">

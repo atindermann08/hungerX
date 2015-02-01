@@ -18,8 +18,14 @@ class User extends Eloquent implements ConfideUserInterface
     public function addresses(){
         return $this->hasMany('Address');
     }
-    
+    	
     public function defaultAddress(){
-        return $this->belongsTo('Address');
+        return $this->belongsTo('Address', 'address_id', 'id');
     }
+	
+	public static function setDefaultAddress($user_id, $address_id){
+		$user = User::find( $user_id );
+		$user->address_id = $address_id;
+		$user->save();
+	}
 }

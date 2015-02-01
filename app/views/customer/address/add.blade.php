@@ -24,9 +24,9 @@
                     <div class="form-group">
                         {{ Form::label('city', 'City') }}
                         {{ Form::select(
-                            'city', 
-                            $cities,  
-                            $selectedCity, 
+                            'city',
+                            $cities,
+                            $selectedCity,
                             array(
                             "onchange" => "this.form.submit()",
                             "class" => "form-control"
@@ -35,9 +35,9 @@
                     <div class="form-group">
                         {{ Form::label('area', 'Area') }}
                         {{ Form::select(
-                            'area', 
-                            $areas,  
-                            null, 
+                            'area',
+                            $areas,
+                            null,
                             array(
                             //"onchange" => "this.form.submit()",
                             "class" => "form-control"
@@ -54,9 +54,9 @@
                     <div class="form-group">
                         <!-- email -->
                         {{ Form::label('pin_code', 'Pin Code') }}
-                        {{ Form::text('pin_code', Input::old('pin_code'), ['class' => "form-control" ]) }}    
+                        {{ Form::text('pin_code', Input::old('pin_code'), ['class' => "form-control" ]) }}
                     </div>
-                    <div class="form-group">  
+                    <div class="form-group">
                         @if ($errors->has())
                             <div class="alert alert-error alert-danger">
                                 <p>Errors occurred.</p>
@@ -67,7 +67,7 @@
 								</ul>
                             </div>
                         @endif
-                        
+
                          @if (Session::get('error'))
                             <div class="alert alert-error alert-danger">
                                 @if (is_array(Session::get('error')))

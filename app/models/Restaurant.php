@@ -10,8 +10,16 @@ class Restaurant extends \Eloquent {
     public function areas(){
         return $this->belongsToMany('Area');
     }
+	
+	public function area(){
+        return $this->belongsTo('Area');
+    }
     
-     public function orders(){
+    public function orders(){
         return $this->hasMany('Order');
+    }
+	
+    public function address(){
+        return $this->belongsTo('Address');
     }
 }

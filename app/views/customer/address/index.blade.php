@@ -6,7 +6,7 @@
     @if(count($addresses))
       <h3>
         Update or Select default Address from {{count($addresses)}} Addresses.
-        <small><i class="location arrow icon"></i><a href='{{route("customer.address.add")}}'>Add New Address</a></small>
+        <small><a href='{{route("customer.address.add")}}'>Add New Address</a></small>
       </h3>
     @else
       <h3>
@@ -41,7 +41,7 @@
 								href="{{route('customer.address.edit',$address->id)}}">
 									Edit
 							</a>
-							<a class='btn btn-success btn-block @if($address->default) disabled @endif' 
+							<a class='btn btn-success btn-block @if( $address->id == $default_address_id ) disabled @endif' 
 								href="{{route('customer.address.default', $address->id)}}">
 									Set Default
 							</a>

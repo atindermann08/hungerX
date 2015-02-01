@@ -17,7 +17,6 @@ class CreateOrdersTable extends Migration {
 			$table->increments('id');
 			$table->integer('user_id');
 			$table->integer('restaurant_id');
-			$table->string('order_number');
 			$table->integer('address_id');
 			$table->boolean('pickup')->default(false);
 			$table->boolean('delivery_later')->default(false);

@@ -16,7 +16,6 @@ class CreateAddressesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
-			$table->boolean('default')->default(false);
 			$table->integer('user_id');
 			$table->integer('area_id');
 			$table->string('house_no')->nullable();

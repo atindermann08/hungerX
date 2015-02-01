@@ -9,8 +9,14 @@ class AddressController extends \BaseController {
     public function index()
 	{
         $addresses = Address::with('area.city.state.country')->where('user_id', '=', Confide::user()->id)->get();
-		//return Response::json($addresses);
-        return View::make('customer.address.index', ['addresses' => $addresses]);	
+		$defaultAddress = Confide::user()->defaultAddress;
+		$default_address_id = $defaultAddress?$defaultAddress->id:null;
+		//return DB::getQueryLog();
+        return View::make('customer.address.index', 
+						  [
+							  'addresses' => $addresses,
+							  'default_address_id' => $default_address_id
+						  ]);	
 	}
     
     public function add()
@@ -59,7 +65,12 @@ class AddressController extends \BaseController {
                 $address->landmark = Input::get('landmark');
                 
                 $address->save();
-                
+				
+                if(!Confide::user()->defaultAddress)
+				{
+					Confide::user()->defaultAddress()->associate($address);
+					Confide::user()->save();
+				}
                 return Redirect::route('customer.address.index')->with('success', 'Address saved!');
             }
             else   
@@ -75,11 +86,9 @@ class AddressController extends \BaseController {
 	
 	public function setDefault($id){
 		
-		
-		Address::where('user_id', '=', Confide::user()->id)->update(array('default' => false));
-		Address::whereRaw('user_id = ? and id = ?',  [Confide::user()->id, $id ])->update(array('default' => true));
-//			where('user_id', '=', Confide::user()->id)->update(array('default' => true));
-		//return Response::json($address);
+		User::setDefaultAddress(Confide::user()->id, $id);
+		//Address::where('user_id', '=', Confide::user()->id)->update(array('default' => false));
+		//Address::whereRaw('user_id = ? and id = ?',  [Confide::user()->id, $id ])->update(array('default' => true));
 		return Redirect::back()->with('message', 'Default address updated');	
 	}
     

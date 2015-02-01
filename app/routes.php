@@ -26,137 +26,127 @@ Route::post('users/forgot_password', 'UsersController@doForgotPassword');
 Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', ['uses' => 'UsersController@logout', 'as' => 'auth.logout']);
-                           
+
 
 //cart
 Route::post(
-	'cart/add', 
-	['uses' => 'CartController@add', 
+	'cart/add',
+	['uses' => 'CartController@add',
 	 'as' => 'cart.add'
 	] );
 Route::any(
-	'cart/clear/{restaurantId}', 
-	['uses' => 'CartController@destroy', 
+	'cart/clear/{restaurantId}',
+	['uses' => 'CartController@destroy',
 	 'as' => 'cart.clear'
 	] );
 Route::any(
-	'cart/remove', 
-	['uses' => 'CartController@remove', 
+	'cart/remove',
+	['uses' => 'CartController@remove',
 	 'as' => 'cart.remove'
 	] );
 Route::post(
-	'cart/update', 
-	['uses' => 'CartController@update', 
+	'cart/update',
+	['uses' => 'CartController@update',
 	 'as' => 'cart.update'
 	] );
 Route::get(
-	'cart/show', 
+	'cart/show',
 	[
-		'uses' => 'CartController@show', 
+		'uses' => 'CartController@show',
 		'as' => 'cart.show'
 	] );
 Route::any(
-	'cart/review', 
+	'cart/review/{restaurantId}',
 	[
-		'uses' => 'CartController@review', 
+		'uses' => 'CartController@review',
 		'as' => 'cart.review'
 	] );
 Route::any(
-	'cart/checkout', 
+	'cart/checkout/{restaurantId}', 
 	[
-		'uses' => 'CartController@checkout', 
+		'uses' => 'CartController@checkout',
 		'as' => 'cart.checkout'
 	] );
 
 
 //custoer profile
 Route::get(
-	'customer/profile', 
+	'customer/profile',
 	[
-		'uses' => 'CustomerController@profile', 
+		'uses' => 'CustomerController@profile',
 		'as' => 'customer.profile'
 	] );
 Route::post(
-	'customer/profile/{id}', 
+	'customer/profile/{id}',
 	[
-		'uses' => 'CustomerController@doUpdateProfile', 
+		'uses' => 'CustomerController@doUpdateProfile',
 		'as' => 'customer.profile.doUpdate'
 	] );
 
 Route::get(
-	'customer/change_password', 
+	'customer/change_password',
 	[
-		'uses' => 'CustomerController@changePassword', 
+		'uses' => 'CustomerController@changePassword',
 		'as' => 'customer.password.change'
 	] );
 Route::post(
-	'customer/change_password/{id}', 
+	'customer/change_password/{id}',
 	[
-		'uses' => 'CustomerController@doChangePassword', 
+		'uses' => 'CustomerController@doChangePassword',
 		'as' => 'customer.password.doChange'
 	] );
 
 
 //customer address
 Route::get(
-	'customer/addresses', 
+	'customer/addresses',
 	[
-		'uses' => 'AddressController@index', 
+		'uses' => 'AddressController@index',
 		'as' => 'customer.address.index'
 	] );
 Route::get(
-	'customer/addresses/add', 
+	'customer/addresses/add',
 	[
-		'uses' => 'AddressController@add', 
+		'uses' => 'AddressController@add',
 		'as' => 'customer.address.add'
 	] );
 Route::post(
-	'customer/addresses/add', 
+	'customer/addresses/add',
 	[
-		'uses' => 'AddressController@doAdd', 
+		'uses' => 'AddressController@doAdd',
 		'as' => 'customer.address.doAdd'
 	] );
 Route::get(
-	'customer/addresses/edit/{id}', 
+	'customer/addresses/edit/{id}',
 	[
-		'uses' => 'AddressController@edit', 
+		'uses' => 'AddressController@edit',
 		'as' => 'customer.address.edit'
 	] );
 Route::post(
-	'customer/addresses/edit/{id}', 
+	'customer/addresses/edit/{id}',
 	[
-		'uses' => 'AddressController@doEdit', 
+		'uses' => 'AddressController@doEdit',
 		'as' => 'customer.address.doEdit'
 	] );
 Route::any(
-	'customer/addresses/default/{id}', 
+	'customer/addresses/default/{id}',
 	[
-		'uses' => 'AddressController@setDefault', 
+		'uses' => 'AddressController@setDefault',
 		'as' => 'customer.address.default'
 	] );
 
 
 //orders
 Route::get(
-	'customer/orders', 
+	'customer/orders',
 	[
-		'uses' => 'OrderController@index', 
+		'uses' => 'OrderController@index',
 		'as' => 'customer.orders.index'
 	]);
 
 Route::get(
-	'customer/orders/{id}', 
+	'customer/orders/{id}',
 	[
-		'uses' => 'OrderController@show', 
+		'uses' => 'OrderController@show',
 		'as' => 'customer.orders.show'
 	]);
-
-
-
-
-
-
-
-
-
-
