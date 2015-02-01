@@ -155,18 +155,27 @@
 												href='{{route("customer.address.add")}}'>Add New Address</a>
 										</div>
 										<div class='media-right'>
-											
-											{{ Form::submit(
-												'Checkout', 
-												[
-													'class' => "btn 
-																btn-success 
-																btn-block
-																@if(count($addresses))
-																	disabled
-																@endif
-																"
-												]) }}
+											@if(!count($addresses))
+												{{ Form::submit(
+													'Checkout', 
+													[
+														'class' => "btn 
+																	btn-success 
+																	btn-block
+
+																		disabled
+																	"
+													]) }}
+											@else
+												{{ Form::submit(
+													'Checkout', 
+													[
+														'class' => "btn 
+																	btn-success 
+																	btn-block
+																	"
+													]) }}
+											@endif
 											
 									</div>
 								</div>
