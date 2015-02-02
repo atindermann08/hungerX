@@ -4,25 +4,25 @@ use Zizaco\Confide\UserValidator as ConfideUserValidator;
 use Zizaco\Confide\UserValidatorInterface;
 use Zizaco\Confide\ConfideUserInterface;
 
-class UserValidator extends ConfideUserValidator 
+class UserValidator extends ConfideUserValidator
 {
     public $rules = [
-        'create' => [  
-            'firstname' => 'required|alpha',      
+        'create' => [
+            'firstname' => 'required|alpha',
             'lastname' => 'required|alpha',
             'mobile' => 'required|regex:/^(\+91)?[6-9][0-9]{9}$/',
             'email' => 'required|email',
-            'password' => 'required|min:7',     
+            'password' => 'required|min:7'
         ],
-        'update' => [  
-            'firstname' => 'required|alpha',      
+        'update' => [
+            'firstname' => 'required|alpha',
             'lastname' => 'required|alpha',
             'mobile' => 'required|regex:/^(\+91)?[6-9][0-9]{9}$/',
             'email' => 'required|email',
-            'password' => 'required|min:7',          
+            'password' => 'required|min:7'
         ],
     ];
-    
+
     public function validateIsUnique(ConfideUserInterface $user)
     {
         $identity = [

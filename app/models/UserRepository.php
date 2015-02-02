@@ -21,8 +21,8 @@ class UserRepository
     {
         $user = new User;
 
-        $user->first_name = array_get($input, 'firstname');
-        $user->last_name = array_get($input, 'lastname');
+        $user->firstname = array_get($input, 'firstname');
+        $user->lastname = array_get($input, 'lastname');
         $user->mobile = array_get($input, 'mobile');
         $user->email    = array_get($input, 'email');
         $user->password = array_get($input, 'password');
@@ -129,7 +129,7 @@ class UserRepository
     {
         return $instance->save();
     }
-    
+
     /*
     public function doChangePassword($id){
         $rules = array(

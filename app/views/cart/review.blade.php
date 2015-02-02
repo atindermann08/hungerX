@@ -157,26 +157,25 @@
 										<div class='media-right'>
 											@if(!count($addresses))
 												{{ Form::submit(
-													'Checkout', 
+													'Checkout',
 													[
-														'class' => "btn 
-																	btn-success 
+														'class' => "btn
+																	btn-success
 																	btn-block
-
-																		disabled
+																	disabled
 																	"
 													]) }}
 											@else
 												{{ Form::submit(
-													'Checkout', 
+													'Checkout',
 													[
-														'class' => "btn 
-																	btn-success 
+														'class' => "btn
+																	btn-success
 																	btn-block
 																	"
 													]) }}
 											@endif
-											
+
 									</div>
 								</div>
 							</div>

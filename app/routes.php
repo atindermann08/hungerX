@@ -65,7 +65,7 @@ Route::any(
 		'as' => 'cart.review'
 	] );
 Route::any(
-	'cart/checkout/{restaurantId}', 
+	'cart/checkout/{restaurantId}',
 	[
 		'uses' => 'CartController@checkout',
 		'as' => 'cart.checkout'
@@ -154,3 +154,32 @@ Route::get(
 		'as' => 'customer.orders.show'
 	]);
 });
+
+
+Route::get(
+	'admin/dashboard',
+	[
+		'uses' => 'AdminController@dashboard',
+		'as' => 'admin.dashboard'
+	]);
+
+Route::get(
+'admin/foods',
+[
+	'uses' => 'AdminController@food',
+	'as' => 'admin.food'
+	]);
+
+Route::get(
+'admin/restaurants',
+[
+	'uses' => 'AdminController@restaurant',
+	'as' => 'admin.restaurant'
+	]);
+
+Route::get(
+'admin/orders',
+[
+	'uses' => 'AdminController@order',
+	'as' => 'admin.order'
+	]);
