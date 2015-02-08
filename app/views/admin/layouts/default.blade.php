@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>SB Admin - Bootstrap Admin Template</title>
+		<title>Hunger Expert - Admin panel</title>
 		@section('styles')
 			<link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
 			<link rel="stylesheet" href="{{asset('admin/css/sb-admin.css')}}">
@@ -31,7 +31,7 @@
 					@yield('container')
 				</div><!-- /.container-fluid -->
 			</div><!-- /#page-wrapper -->
-		</div><!-- /#wrapper -->       
+		</div><!-- /#wrapper -->
 		@section('scripts')
 			<script src="{{asset('admin/js/jquery.js')}}"></script>
 			<script src="{{asset('admin/js/bootstrap.min.js')}}"></script>
@@ -41,4 +41,3 @@
 		@show
 	</body>
 </html>
-

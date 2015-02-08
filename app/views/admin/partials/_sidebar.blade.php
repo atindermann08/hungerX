@@ -14,7 +14,8 @@
 			<a href="{{ route('admin.order') }}"><i class="fa fa-fw fa-money"></i> Orders</a>
 		</li>
 		<li>
-			<a href="javascript:;" data-toggle="collapse" data-target="#locations"><i class="fa fa-fw fa-map-marker"></i> Location <i class="fa fa-fw fa-caret-down"></i></a>
+			<a href="javascript:;" data-toggle="collapse" data-target="#locations">
+				<i class="fa fa-fw fa-map-marker"></i> Localization <i class="fa fa-fw fa-caret-down"></i></a>
 			<ul id="locations" class="collapse">
 				<li>
 					<a href="#">Areas</a>
@@ -26,7 +27,7 @@
 					<a href="#">States</a>
 				</li>
 				<li>
-					<a href="#">Countries</a>
+					<a href="{{ route('admin.countries.index') }}">Countries</a>
 				</li>
 			</ul>
 		</li>
@@ -41,9 +42,6 @@
 				</li>
 				<li>
 					<a href="#">Permissions</a>
-				</li>
-				<li>
-					<a href="#">Countries</a>
 				</li>
 			</ul>
 		</li>

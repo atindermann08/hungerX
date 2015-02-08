@@ -30,156 +30,162 @@ Route::get('users/logout', ['uses' => 'UsersController@logout', 'as' => 'auth.lo
 
 //cart
 Route::post(
-	'cart/add',
-	['uses' => 'CartController@add',
-	 'as' => 'cart.add'
-	] );
+'cart/add',
+['uses' => 'CartController@add',
+'as' => 'cart.add'
+] );
 Route::any(
-	'cart/clear/{restaurantId}',
-	['uses' => 'CartController@destroy',
-	 'as' => 'cart.clear'
-	] );
+'cart/clear/{restaurantId}',
+['uses' => 'CartController@destroy',
+'as' => 'cart.clear'
+] );
 Route::any(
-	'cart/remove',
-	['uses' => 'CartController@remove',
-	 'as' => 'cart.remove'
-	] );
+'cart/remove',
+['uses' => 'CartController@remove',
+'as' => 'cart.remove'
+] );
 Route::post(
-	'cart/update',
-	['uses' => 'CartController@update',
-	 'as' => 'cart.update'
-	] );
+'cart/update',
+['uses' => 'CartController@update',
+'as' => 'cart.update'
+] );
 Route::get(
-	'cart/show',
-	[
-		'uses' => 'CartController@show',
-		'as' => 'cart.show'
-	] );
+'cart/show',
+[
+'uses' => 'CartController@show',
+'as' => 'cart.show'
+] );
 
 Route::group(array('before' => 'customer'), function()
 {
-Route::any(
+	Route::any(
 	'cart/review/{restaurantId}',
 	[
-		'uses' => 'CartController@review',
-		'as' => 'cart.review'
+	'uses' => 'CartController@review',
+	'as' => 'cart.review'
 	] );
-Route::any(
+	Route::any(
 	'cart/checkout/{restaurantId}',
 	[
-		'uses' => 'CartController@checkout',
-		'as' => 'cart.checkout'
+	'uses' => 'CartController@checkout',
+	'as' => 'cart.checkout'
 	] );
 
 
-//custoer profile
-Route::get(
+	//custoer profile
+	Route::get(
 	'customer/profile',
 	[
-		'uses' => 'CustomerController@profile',
-		'as' => 'customer.profile'
+	'uses' => 'CustomerController@profile',
+	'as' => 'customer.profile'
 	] );
-Route::post(
+	Route::post(
 	'customer/profile/{id}',
 	[
-		'uses' => 'CustomerController@doUpdateProfile',
-		'as' => 'customer.profile.doUpdate'
+	'uses' => 'CustomerController@doUpdateProfile',
+	'as' => 'customer.profile.doUpdate'
 	] );
 
-Route::get(
+	Route::get(
 	'customer/change_password',
 	[
-		'uses' => 'CustomerController@changePassword',
-		'as' => 'customer.password.change'
+	'uses' => 'CustomerController@changePassword',
+	'as' => 'customer.password.change'
 	] );
-Route::post(
+	Route::post(
 	'customer/change_password/{id}',
 	[
-		'uses' => 'CustomerController@doChangePassword',
-		'as' => 'customer.password.doChange'
+	'uses' => 'CustomerController@doChangePassword',
+	'as' => 'customer.password.doChange'
 	] );
 
 
-//customer address
-Route::get(
+	//customer address
+	Route::get(
 	'customer/addresses',
 	[
-		'uses' => 'AddressController@index',
-		'as' => 'customer.address.index'
+	'uses' => 'AddressController@index',
+	'as' => 'customer.address.index'
 	] );
-Route::get(
+	Route::get(
 	'customer/addresses/add',
 	[
-		'uses' => 'AddressController@add',
-		'as' => 'customer.address.add'
+	'uses' => 'AddressController@add',
+	'as' => 'customer.address.add'
 	] );
-Route::post(
+	Route::post(
 	'customer/addresses/add',
 	[
-		'uses' => 'AddressController@doAdd',
-		'as' => 'customer.address.doAdd'
+	'uses' => 'AddressController@doAdd',
+	'as' => 'customer.address.doAdd'
 	] );
-Route::get(
+	Route::get(
 	'customer/addresses/edit/{id}',
 	[
-		'uses' => 'AddressController@edit',
-		'as' => 'customer.address.edit'
+	'uses' => 'AddressController@edit',
+	'as' => 'customer.address.edit'
 	] );
-Route::post(
+	Route::post(
 	'customer/addresses/edit/{id}',
 	[
-		'uses' => 'AddressController@doEdit',
-		'as' => 'customer.address.doEdit'
+	'uses' => 'AddressController@doEdit',
+	'as' => 'customer.address.doEdit'
 	] );
-Route::any(
+	Route::any(
 	'customer/addresses/default/{id}',
 	[
-		'uses' => 'AddressController@setDefault',
-		'as' => 'customer.address.default'
+	'uses' => 'AddressController@setDefault',
+	'as' => 'customer.address.default'
 	] );
 
 
-//orders
-Route::get(
+	//orders
+	Route::get(
 	'customer/orders',
 	[
-		'uses' => 'OrderController@index',
-		'as' => 'customer.orders.index'
+	'uses' => 'OrderController@index',
+	'as' => 'customer.orders.index'
 	]);
 
-Route::get(
+	Route::get(
 	'customer/orders/{id}',
 	[
-		'uses' => 'OrderController@show',
-		'as' => 'customer.orders.show'
+	'uses' => 'OrderController@show',
+	'as' => 'customer.orders.show'
 	]);
 });
 
+Route::group(array('prefix' => 'admin'), function()
+{
 
-Route::get(
-	'admin/dashboard',
+	Route::resource('countries','\HungerExpert\Admin\controllers\CountriesController');
+
+	Route::get(
+	'dashboard',
 	[
-		'uses' => 'AdminController@dashboard',
-		'as' => 'admin.dashboard'
+	'uses' => 'AdminController@dashboard',
+	'as' => 'admin.dashboard'
 	]);
 
-Route::get(
-'admin/foods',
-[
+	Route::get(
+	'foods',
+	[
 	'uses' => 'AdminController@food',
 	'as' => 'admin.food'
 	]);
 
-Route::get(
-'admin/restaurants',
-[
+	Route::get(
+	'restaurants',
+	[
 	'uses' => 'AdminController@restaurant',
 	'as' => 'admin.restaurant'
 	]);
 
-Route::get(
-'admin/orders',
-[
+	Route::get(
+	'orders',
+	[
 	'uses' => 'AdminController@order',
 	'as' => 'admin.order'
 	]);
+
+});
