@@ -5,7 +5,7 @@ class Country extends \Eloquent {
     protected $hidden = ['created_at','updated_at'];
 
 		public static $rules = [
-			'name' => 'required|unique:countries'
+			'name' => 'required|min:2|unique:countries'
 		];
 
     public function states(){

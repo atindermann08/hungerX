@@ -159,6 +159,9 @@ Route::group(array('prefix' => 'admin'), function()
 {
 
 	Route::resource('countries','\HungerExpert\Admin\controllers\CountriesController');
+	Route::resource('states','\HungerExpert\Admin\controllers\StatesController');
+	Route::resource('cities','\HungerExpert\Admin\controllers\CitiesController');
+	Route::resource('areas','\HungerExpert\Admin\controllers\AreasController');
 
 	Route::get(
 	'dashboard',

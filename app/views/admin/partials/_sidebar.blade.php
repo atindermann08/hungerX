@@ -18,13 +18,13 @@
 				<i class="fa fa-fw fa-map-marker"></i> Localization <i class="fa fa-fw fa-caret-down"></i></a>
 			<ul id="locations" class="collapse">
 				<li>
-					<a href="#">Areas</a>
+					<a href="{{ route('admin.areas.index') }}">Areas</a>
 				</li>
 				<li>
-					<a href="#">Cities</a>
+					<a href="{{ route('admin.cities.index') }}">Cities</a>
 				</li>
 				<li>
-					<a href="#">States</a>
+					<a href="{{ route('admin.states.index') }}">States</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.countries.index') }}">Countries</a>

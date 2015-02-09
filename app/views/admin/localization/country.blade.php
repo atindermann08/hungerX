@@ -8,8 +8,9 @@
     <hr>
 
     @if($errors->has())
-    <div class='alert'>
-      <p>Following errors occured</p>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong> Following errors occured
       <ul>
         @foreach($errors->all() as $error)
         <li> {{ $error }}  </li>
@@ -20,8 +21,8 @@
 
     {{ Form::open(array('url' => route('admin.countries.store'), 'class' => 'form-inline')) }}
       {{ Form::label('name') }}
-      {{ Form::text('name') }}
-    {{ Form::submit('Add Country', array('class' => 'btn btn-primary')) }}
+      {{ Form::text('name', null, array("class" => "form-control")) }}
+    {{ Form::submit('Add Country', array('class' => 'form-control btn btn-primary')) }}
     {{ Form::close() }}
     <hr>
     <ul>

@@ -45,8 +45,7 @@
         "zizaco/confide": "~4.0@dev",
         "machuga/authority-l4" : "dev-master",
         "zizaco/entrust" : "1.2.*@dev",
-        "gloudemans/shoppingcart": "~1.2"
-
-
+        "gloudemans/shoppingcart": "~1.2",
+				"intervention/image" : "dev-master"
     }
 }

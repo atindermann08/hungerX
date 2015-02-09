@@ -121,10 +121,11 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Way\Generators\GeneratorsServiceProvider',
-        'Zizaco\Confide\ServiceProvider',
-        'Zizaco\Entrust\EntrustServiceProvider',
-        'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+    'Way\Generators\GeneratorsServiceProvider',
+    'Zizaco\Confide\ServiceProvider',
+    'Zizaco\Entrust\EntrustServiceProvider',
+    'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
 	),
 
@@ -192,9 +193,10 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-        'Confide'           => 'Zizaco\Confide\Facade',
-        'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
-        'Cart'              => 'Gloudemans\Shoppingcart\Facades\Cart',
+    'Confide'           => 'Zizaco\Confide\Facade',
+    'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
+    'Cart'              => 'Gloudemans\Shoppingcart\Facades\Cart',
+		'Image'							=> 'Intervention\Image\Facades\Image',
 
 	),
 
