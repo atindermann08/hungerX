@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <h2>Countries</h2>
+    <h2>Categories</h2>
     <hr>
 
     @if($errors->has())
@@ -19,21 +19,21 @@
     </div>
     @endif
 
-    {{ Form::open(array('url' => route('admin.countries.store'), 'class' => 'form-inline')) }}
+    {{ Form::open(array('url' => route('admin.categories.store'), 'class' => 'form-inline')) }}
     {{ Form::label('name') }}
     {{ Form::text('name', null, array("class" => "form-control")) }}
-    {{ Form::submit('Add Country', array('class' => 'form-control btn btn-primary')) }}
+    {{ Form::submit('Add Category', array('class' => 'form-control btn btn-primary')) }}
     {{ Form::close() }}
     <hr>
     <ul>
-      @foreach($countries as $country)
+      @foreach($categories as $category)
       <li>
         {{ Form::open(
           array(
           'method' => 'DELETE',
-          'url' => route('admin.countries.destroy', $country->id),
+          'url' => route('admin.categories.destroy', $category->id),
           'class' => 'form-inline'))}}
-          {{ $country->name }}
+          {{ $category->name }}
           {{ Form::submit('Delete', array('class' => 'btn btn-link'))}}
           {{ Form::close()}}
         </li>

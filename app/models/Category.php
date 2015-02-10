@@ -2,8 +2,12 @@
 
 class Category extends \Eloquent {
 	protected $fillable = [];
-    
-     public function foods(){
-        return $this->hasMany('Food');
-    }
+
+	public static $rules = [
+		'name' => 'required|min:2|unique:categories'
+	];
+
+	public function foods(){
+	  return $this->hasMany('Food');
+  }
 }

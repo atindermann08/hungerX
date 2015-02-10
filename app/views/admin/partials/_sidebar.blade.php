@@ -11,6 +11,9 @@
 			<a href="{{ route('admin.food') }}"><i class="fa fa-fw fa-spoon"></i> Foods</a>
 		</li>
 		<li>
+			<a href="{{ route('admin.categories.index') }}"><i class="fa fa-fw fa-tags"></i> Categories</a>
+		</li>
+		<li>
 			<a href="{{ route('admin.order') }}"><i class="fa fa-fw fa-money"></i> Orders</a>
 		</li>
 		<li>
