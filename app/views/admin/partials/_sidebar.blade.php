@@ -5,10 +5,10 @@
 			<a href="{{ route('admin.dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
 		</li>
 		<li>
-			<a href="{{ route('admin.restaurant') }}"><i class="fa fa-fw fa-book"></i> Restaurants</a>
+			<a href="{{ route('admin.restaurants.index') }}"><i class="fa fa-fw fa-book"></i> Restaurants</a>
 		</li>
 		<li>
-			<a href="{{ route('admin.food') }}"><i class="fa fa-fw fa-spoon"></i> Foods</a>
+			<a href="{{ route('admin.foods.index') }}"><i class="fa fa-fw fa-spoon"></i> Foods</a>
 		</li>
 		<li>
 			<a href="{{ route('admin.categories.index') }}"><i class="fa fa-fw fa-tags"></i> Categories</a>

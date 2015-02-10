@@ -2,7 +2,7 @@
 
 namespace HungerExpert\Admin\controllers;
 
-class CategoriesController extends \BaseController {
+class FoodsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -11,8 +11,11 @@ class CategoriesController extends \BaseController {
 	 */
 	public function index()
 	{
-		return \View::make('admin.foods.category')
-						->with('categories', \Category::all());
+		$foods = \Food::with('category')->get();
+		$categories = \Category::all()->lists('name','id');
+		return \View::make('admin.foods.index')
+						->with('foods', $foods)
+						->with('categories', $categories);
 	}
 
 
@@ -34,14 +37,16 @@ class CategoriesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = \Validator::make(\Input::all(), \Category::$rules);
+		$validator = \Validator::make(\Input::all(), \Food::$rules);
 
 		if($validator->passes())
 		{
-			$category = new \Category;
-			$category->name = \Input::get('name');
-			$category->save();
-			return \Redirect::back()->with('message','Category added.');
+			$food = new \Food;
+			$food->name = \Input::get('name');
+			$food->category_id = \Input::get('category_id');
+			$food->veg = \Input::has('veg')?\Input::get('veg'):1;
+			$food->save();
+			return \Redirect::back()->with('message','Food added.');
 		}
 
 		return \Redirect::back()
@@ -96,15 +101,15 @@ class CategoriesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$category = \Category::find($id);
-		if($category)
+		$food = \Food::find($id);
+		if($food)
 		{
-			$category->delete();
+			$food->delete();
 			return \Redirect::back()
-						->with('message', 'Category deleted.');
+						->with('message', 'Food deleted.');
 		}
 		return \Redirect::back()
-						->with('message', 'Country does not exist.');
+						->with('message', 'State does not exist.');
 	}
 
 

@@ -2,7 +2,7 @@
 
 namespace HungerExpert\Admin\controllers;
 
-class CategoriesController extends \BaseController {
+class RestaurantsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -11,8 +11,8 @@ class CategoriesController extends \BaseController {
 	 */
 	public function index()
 	{
-		return \View::make('admin.foods.category')
-						->with('categories', \Category::all());
+		return \View::make('admin.restaurants.index')
+						->with('restaurants', \Restaurant::all());
 	}
 
 
@@ -23,8 +23,9 @@ class CategoriesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return \View::make('admin.restaurants.create');
 	}
+	
 
 
 	/**
@@ -34,14 +35,14 @@ class CategoriesController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = \Validator::make(\Input::all(), \Category::$rules);
+		$validator = \Validator::make(\Input::all(), \Restaurant::$rules);
 
 		if($validator->passes())
 		{
-			$category = new \Category;
-			$category->name = \Input::get('name');
-			$category->save();
-			return \Redirect::back()->with('message','Category added.');
+			$restaurant = new \Restaurant;
+			$restaurant->name = \Input::get('name');
+			$restaurant->save();
+			return \Redirect::back()->with('message','Restaurant added.');
 		}
 
 		return \Redirect::back()
@@ -96,15 +97,15 @@ class CategoriesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$category = \Category::find($id);
-		if($category)
+		$restaurant = \Restaurant::find($id);
+		if($restaurant)
 		{
-			$category->delete();
+			$restaurant->delete();
 			return \Redirect::back()
-						->with('message', 'Category deleted.');
+						->with('message', 'Restaurant deleted.');
 		}
 		return \Redirect::back()
-						->with('message', 'Country does not exist.');
+						->with('message', 'Restaurant does not exist.');
 	}
 
 

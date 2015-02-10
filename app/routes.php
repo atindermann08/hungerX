@@ -157,6 +157,9 @@ Route::group(array('before' => 'customer'), function()
 
 Route::group(array('prefix' => 'admin'), function()
 {
+	Route::get('dashboard',[
+		'uses' => 'AdminController@dashboard',
+		'as' => 'admin.dashboard']);
 
 	Route::resource('countries','\HungerExpert\Admin\controllers\CountriesController');
 	Route::resource('states','\HungerExpert\Admin\controllers\StatesController');
@@ -164,33 +167,12 @@ Route::group(array('prefix' => 'admin'), function()
 	Route::resource('areas','\HungerExpert\Admin\controllers\AreasController');
 
 	Route::resource('categories','\HungerExpert\Admin\controllers\CategoriesController');
+	Route::resource('foods','\HungerExpert\Admin\controllers\FoodsController');
+	Route::resource('restaurants','\HungerExpert\Admin\controllers\RestaurantsController');
 
-	Route::get(
-	'dashboard',
-	[
-	'uses' => 'AdminController@dashboard',
-	'as' => 'admin.dashboard'
-	]);
 
-	Route::get(
-	'foods',
-	[
-	'uses' => 'AdminController@food',
-	'as' => 'admin.food'
-	]);
-
-	Route::get(
-	'restaurants',
-	[
-	'uses' => 'AdminController@restaurant',
-	'as' => 'admin.restaurant'
-	]);
-
-	Route::get(
-	'orders',
-	[
-	'uses' => 'AdminController@order',
-	'as' => 'admin.order'
-	]);
+	Route::get('orders',[
+		'uses' => 'AdminController@order',
+		'as' => 'admin.order']);
 
 });
