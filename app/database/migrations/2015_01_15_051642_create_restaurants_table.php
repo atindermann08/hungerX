@@ -17,6 +17,7 @@ class CreateRestaurantsTable extends Migration {
 			$table->increments('id');
 			$table->string('name', 60);
 			$table->text('description', 500);
+			$table->string('image');
 			$table->integer('area_id');
 			$table->boolean('pure_veg');
 			$table->integer('min_order');
