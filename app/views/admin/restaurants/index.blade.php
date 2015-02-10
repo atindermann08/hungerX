@@ -18,26 +18,24 @@
       </ul>
     </div>
     @endif
-    <a href='{{route("admin.restaurants.create")}}' class="btn btn-primary">Add New Restaurant</a>
+    <a href='{{ route("admin.restaurants.create") }}' class="btn btn-primary">Add New Restaurant</a>
       <hr>
       <ul>
-        @foreach($restaurants as $restaurant)
-        <li>
-          {{ Form::open(
-            array(
+      @foreach($restaurants as $restaurant)
+      <li>
+        {{ Form::open(
+           array(
             'method' => 'DELETE',
             'url' => route('admin.restaurants.destroy', $restaurant->id),
-            'class' => 'form-inline'))}}
-            {{ $restaurant->name }}, {{ $restaurant->area->name }}
-            {{ Form::submit('Delete', array('class' => 'btn btn-link'))}}
-            {{ Form::close()}}
-          </li>
-          @endforeach
-        </ul>
-        <hr>
-
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      </div>
-    </div>
-    @stop
+            'class' => 'form-inline')) }}
+          {{ $restaurant->name }}, {{ $restaurant->area->name }}
+          {{ Form::submit('Delete', array('class' => 'btn btn-link')) }}
+        {{ Form::close() }}
+      </li>
+      @endforeach
+      </ul>
+    <hr>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+</div>
+@stop
