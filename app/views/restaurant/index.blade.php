@@ -20,7 +20,7 @@
         @foreach ($restaurants as $restaurant)
             <div class="col-sm-4 col-md-3">
                 <a href="{{route('restaurant.show',$restaurant->id)}}" class="thumbnail btn">
-                  <img class='img-rounded' src="{{asset('assets/img/restaurants/test.jpg')}}" alt="{{$restaurant->name}}" />
+                  {{ HTML::image(asset('assets/img/restaurants/'.$restaurant->id.'.jpg'), $restaurant->name, ['class' => 'img-circle'])}}
                   <div class="caption">
                     <h3>{{$restaurant->name}}</h3>
 

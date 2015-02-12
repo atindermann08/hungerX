@@ -7,17 +7,18 @@ class Restaurant extends \Eloquent {
 		public static $rules = [
 			'name' => 'required|min:2|unique:restaurants',
 			'description' => 'required|min:20',
+			'image' => 'required|image|mimes:jpeg,jpg,png,bmp,gif',
 			'area_id' => 'required|integer',
-			'pure_veg' => 'required|boolean',
-			'min_order' => 'required|number',
-			'delivery_fee' => 'required|number',
-			'delivery_time' => 'required|number',
-			'online_payment' => 'required|boolean',
-			'cash_on_delivery' => 'required|boolean',
-			'preorder' => 'required|boolean',
-			'pickup' => 'required|boolean',
-			'order_start_time' => 'required|date',
-			'order_stop_time' => 'required|date'
+			'min_order' => 'required|numeric',
+			'delivery_fee' => 'required|numeric',
+			'delivery_time' => 'required|numeric',
+			'order_start_time' => 'required|regex:/^[0-2]?[0-9]:[0-9]{2}$/',
+			'order_stop_time' => 'required|regex:/^[0-2]?[0-9]:[0-9]{2}$/',
+			'online_payment' => 'boolean',
+			'cash_on_delivery' => 'boolean',
+			'preorder' => 'boolean',
+			'pickup' => 'boolean',
+			'pure_veg' => 'boolean'
 		];
 
     public function foods(){

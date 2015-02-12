@@ -11,8 +11,8 @@ class RestaurantController extends \BaseController {
 	public function index()
 	{
 		$id = Input::get('area');
-		$restaurants = Area::find($id)->restaurants;
 		$area = Area::find($id);
+		$restaurants = $area->restaurants;
 		$city = $area->city;
 		return View::make('restaurant.index',['restaurants' => $restaurants, 'area' => $area, 'city' => $city]);
 	}
@@ -31,10 +31,10 @@ class RestaurantController extends \BaseController {
         $cart = Cart::instance($restaurantId)->content();
             //return Response::json($cart);
 		return View::make(
-				'restaurant.show', 
+				'restaurant.show',
 				[
-					'restaurant' => $restaurant, 
-					'cart' => $cart, 
+					'restaurant' => $restaurant,
+					'cart' => $cart,
 					'total' => Cart::instance($restaurantId)->total()
 				]);
 

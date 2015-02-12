@@ -7,7 +7,7 @@
             <div class="page-header">
                 <div class="media">
                   <div class="media-left">
-                    <img class="media-object" src="{{asset('assets/img/restaurants/test.jpg')}}" alt="{{$restaurant->name}}" height='100px'>
+                    {{ HTML::image(asset('assets/img/restaurants/'.$restaurant->id.'.jpg'), $restaurant->name, ['height' => '100px', 'class'=>'img-circle'])}}
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">{{$restaurant->name}}</h4>
@@ -23,7 +23,7 @@
             <div class="col-md-12">
                     <div class="navbar-right"><b></b></div><p class="list-group-item-text"></p><hr>
                     @foreach ($restaurant->foods as $food)
-                            <div class="navbar-right">                                
+                            <div class="navbar-right">
                                 {{ Form::open(['url' => route('cart.add')]) }}
                                    <b>&#8377; {{$food->pivot->price}}</b>
                                     {{ Form::hidden('qty', 1) }}
