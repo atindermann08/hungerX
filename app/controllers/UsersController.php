@@ -63,6 +63,9 @@ class UsersController extends Controller
     public function login()
     {
         if (Confide::user()) {
+            if( Confide::user()->hasRole("Admin") || Confide::user()->hasRole("Super Admin")  ){
+              return Redirect::route('admin.dashboard');
+            }
             return Redirect::to('/');
         } else {
             return View::make('users.login');
@@ -80,6 +83,9 @@ class UsersController extends Controller
         $input = Input::all();
 
         if ($repo->login($input)) {
+            if( Confide::user()->hasRole("Admin") || Confide::user()->hasRole("Super Admin")  ){
+              return Redirect::route('admin.dashboard');
+            }
             return Redirect::intended('/');
         } else {
             if ($repo->isThrottled($input)) {

@@ -1,12 +1,12 @@
 @extends('admin.layouts.default')
 
 @section('container')
-    <ol class="breadcrumb">
-      <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-      <li><a href="{{ route('admin.restaurants.index') }}">Restaurants</a></li>
-      <li class="active">Restaurant Details</li>
-    </ol>
-    <h2>Restaurant</h2>
+<h1 class="page-header">Restaurant</h1>
+<ol class="breadcrumb">
+  <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+  <li><a href="{{ route('admin.restaurants.index') }}">Restaurants</a></li>
+  <li class="active">Restaurant Details</li>
+</ol>
     <hr>
     <div class="col-md-12">
       <div class="page-header">

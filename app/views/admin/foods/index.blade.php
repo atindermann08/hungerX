@@ -1,11 +1,11 @@
 @extends('admin.layouts.default')
 
 @section('container')
-    <ol class="breadcrumb">
-      <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-      <li class="active">Foods</li>
-    </ol>
-    <h2>Foods</h2>
+  <h1 class="page-header">Foods</h1>
+  <ol class="breadcrumb">
+    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+    <li class="active">Foods</li>
+  </ol>
     <hr>
     @if($errors->has())
     <div class="alert alert-warning alert-dismissible" role="alert">

@@ -20,13 +20,13 @@ class UserPermissionRoleSeeder extends Seeder {
     $customer2 = User::where('email', 'LIKE', 'customer2%')->first();
 
     //get roles
-    $superAdminRole = Role::where('name','=','super_admin')->first();
-    $adminRole = Role::where('name','=','admin')->first();
-    $employeeRole = Role::where('name','=','employee')->first();
-    $restaurantRole = Role::where('name','=','restaurant')->first();
-    $customerRole = Role::where('name','=','customer')->first();
+    $superAdminRole = Role::where('name','=','Super Admin')->first();
+    $adminRole = Role::where('name','=','Admin')->first();
+    $employeeRole = Role::where('name','=','Employee')->first();
+    $restaurantRole = Role::where('name','=','Restaurant')->first();
+    $customerRole = Role::where('name','=','Customer')->first();
 
-      
+
 
     //assign roles
     $mann->roles()->attach( $superAdminRole->id );
@@ -39,9 +39,9 @@ class UserPermissionRoleSeeder extends Seeder {
     $customer->roles()->attach( $customerRole->id );
     $customer1->roles()->attach( $customerRole->id );
     $customer2->roles()->attach( $customerRole->id );
-      
-    
-    //get permissions  
+
+
+    //get permissions
     $manageUsers = Permission::where('name','=','manage_users')->first();
     $managePermissions = Permission::where('name','=','manage_permissions')->first();
     $manageRoles = Permission::where('name','=','manage_roles')->first();
@@ -49,15 +49,14 @@ class UserPermissionRoleSeeder extends Seeder {
     $createRestaurants = Permission::where('name','=','create_restaurants')->first();
     $manageOrders = Permission::where('name','=','manage_orders')->first();
     $manageLocations = Permission::where('name','=','manage_locations')->first();
-      
+
     //dd($managePermissions->id);
     //assign permissions
     $superAdminRole->perms()->sync([$manageUsers->id, $managePermissions->id, $manageRoles->id, $manageRestaurants->id, $manageOrders->id, $manageLocations->id]);
     $adminRole->perms()->sync([$manageUsers->id, $manageRestaurants->id, $manageOrders->id, $manageLocations->id]);
-    $employeeRole->perms()->sync([$manageRestaurants->id, $createRestaurants->id, $manageOrders->id]);  
+    $employeeRole->perms()->sync([$manageRestaurants->id, $createRestaurants->id, $manageOrders->id]);
     $restaurantRole->perms()->sync([$manageRestaurants->id, $manageOrders->id]);
     $customerRole->perms()->sync([$manageOrders->id]);
-      
 
   }
 

@@ -10,7 +10,7 @@ class UsersTableSeeder extends Seeder {
     {
         //User::truncate();
         $faker = Faker::create('en_IN');
-        
+
         //super admin
         $user = new User;
         $user->firstname = 'Demo';
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder {
         $user->lastname = $faker->lastName();
         $user->mobile = '9999900001';
         $user->email = 'admin@hungerexpert.in';
-        $user->password = 'hungerexpert';
+        $user->password = 'admin';//hungerexpert
         $user->password_confirmation = 'hungerexpert';
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
         $user->confirmed = true;

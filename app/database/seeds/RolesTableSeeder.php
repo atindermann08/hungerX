@@ -9,7 +9,7 @@ class RolesTableSeeder extends Seeder {
 	{
 		//super admin
 		$role = new Role;
-		$role->name = 'super_admin';
+		$role->name = 'Super Admin';
 		if(! $role->save()) {
 			Log::info('Unable to create role '.$role->name, (array)$role->errors());
 		} else {
@@ -18,7 +18,7 @@ class RolesTableSeeder extends Seeder {
 
 		//admin
 		$role = new Role;
-		$role->name = 'admin';
+		$role->name = 'Admin';
 
 		if(! $role->save()) {
 			Log::info('Unable to create role '.$role->name, (array)$role->errors());
@@ -28,7 +28,7 @@ class RolesTableSeeder extends Seeder {
 
 		//employee
 		$role = new Role;
-		$role->name = 'employee';
+		$role->name = 'Employee';
 
 		if(! $role->save()) {
 			Log::info('Unable to create role '.$role->name, (array)$role->errors());
@@ -38,7 +38,7 @@ class RolesTableSeeder extends Seeder {
 
 		//restaurant
 		$role = new Role;
-		$role->name = 'restaurant';
+		$role->name = 'Restaurant';
 
 		if(! $role->save()) {
 			Log::info('Unable to create role '.$role->name, (array)$role->errors());
@@ -48,7 +48,7 @@ class RolesTableSeeder extends Seeder {
 
 		//customer
 		$role = new Role;
-		$role->name = 'customer';
+		$role->name = 'Customer';
 
 		if(! $role->save()) {
 			Log::info('Unable to create role '.$role->name, (array)$role->errors());

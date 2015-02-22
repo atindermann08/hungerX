@@ -1,12 +1,11 @@
 @extends('admin.layouts.default')
 
 @section('container')
+<h1 class="page-header">Roles</h1>
   <ol class="breadcrumb">
     <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
     <li class="active">Roles</li>
   </ol>
-
-    <h2>Roles</h2>
     <hr>
 
     @if($errors->has())

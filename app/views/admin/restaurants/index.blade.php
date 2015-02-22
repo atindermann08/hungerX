@@ -1,14 +1,18 @@
 @extends('admin.layouts.default')
 
 @section('container')
-  <ol class="breadcrumb">
-    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-    <li class="active">Restaurants</li>
-  </ol>
-  <div class="col-md-8"><h2>Restaurants</h2></div>
-  <div class="pull-right">
-    <a href='{{ route("admin.restaurants.create") }}' class="btn btn-primary">Add New Restaurant</a>
-  </div>
+
+<h1 class="page-header">
+  Restaurants
+  <a href='{{ route("admin.restaurants.create") }}' class="btn btn-primary pull-right">Add New Restaurant</a>
+</h1>
+
+<ol class="breadcrumb">
+  <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+  <li class="active">Restaurants</li>
+</ol>
+<hr>
+
   <div class="col-lg-12">
     @if($errors->has())
     <div class="alert alert-warning alert-dismissible" role="alert">

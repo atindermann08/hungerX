@@ -2,8 +2,12 @@
 
 @section('container')
 
-    <h2>Add new restaurant</h2>
-    <hr>
+  <h1 class="page-header">Add new Restaurant</h1>
+  <ol class="breadcrumb">
+    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+    <li class="active">Add Restaurant</li>
+  </ol>
+  <hr>
 
     @if($errors->has())
     <div class="alert alert-warning alert-dismissible" role="alert">

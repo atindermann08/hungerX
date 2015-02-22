@@ -1,13 +1,13 @@
 @extends('admin.layouts.default')
 
 @section('container')
+<h1 class="page-header">Edit Restaurant Delivery Areas</h1>
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
       <li><a href="{{ route('admin.restaurants.index') }}">Restaurants</a></li>
       <li><a href="{{ route('admin.restaurants.show', $restaurant->id) }}">Restaurant Details</a></li>
       <li class="active">Delivery Areas</li>
     </ol>
-    <h2>Edit Restaurant Delivery Areas</h2>
     <hr>
     <div class="col-md-12">
       <div class="page-header">

@@ -1,13 +1,12 @@
 @extends('admin.layouts.default')
 
 @section('container')
-
+<h1 class="page-header">Permissions</h1>
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
       <li class="active">Permissions</li>
 </ol>
-    <h2>Permissions</h2>
-    <hr>
+<hr>
 
     @if($errors->has())
     <div class="alert alert-warning alert-dismissible" permission="alert">

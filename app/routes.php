@@ -213,3 +213,5 @@ Route::group(array('prefix' => 'admin'), function()
 		'as' => 'admin.order']);
 
 });
+
+Entrust::routeNeedsRole( 'admin/*', array('Super Admin','Admin'), Redirect::to('/users/login')  , false );

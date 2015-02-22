@@ -1,14 +1,13 @@
 @extends('admin.layouts.default')
 
 @section('container')
+
+    <h1 class="page-header">States</h1>
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
       <li class="active">States</li>
     </ol>
-
-    <h2>States</h2>
     <hr>
-
     @if($errors->has())
     <div class="alert alert-warning alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
