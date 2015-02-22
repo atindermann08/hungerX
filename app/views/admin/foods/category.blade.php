@@ -19,31 +19,38 @@
       </ul>
     </div>
     @endif
-
-    {{ Form::open(array('url' => route('admin.categories.store'), 'class' => 'form-inline')) }}
-    {{ Form::label('name') }}
-    {{ Form::text('name', null, array("class" => "form-control")) }}
-    {{ Form::submit('Add Category', array('class' => 'form-control btn btn-primary')) }}
-    {{ Form::close() }}
-    <hr>
-    <ul>
-      @foreach($categories as $category)
-      <li>
-        {{ Form::open(
-          array(
-          'method' => 'DELETE',
-          'url' => route('admin.categories.destroy', $category->id),
-          'class' => 'form-inline'))}}
-          {{ $category->name }}
-          {{ Form::submit('Delete', array('class' => 'btn btn-link'))}}
-          {{ Form::close()}}
-        </li>
-        @endforeach
-      </ul>
-      <hr>
-
-
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        {{ Form::open([
+          'url' => route('admin.categories.store'),
+          'method' => 'POST'
+          ])}}
+          <td>
+            {{ Form::text('name', null, array("class" => "form-control")) }}
+          </td>
+          <td> {{ Form::submit('Add Category', ['class' => 'btn btn-primary btn-block']) }}</td>
+          {{ Form::close() }}
+        </tr>
+        @foreach($categories as $category)
+        <tr>
+          <td>
+            {{$category->name}}
+          </td>
+          <td>
+            {{ Form::open(
+              array(
+              'method' => 'DELETE',
+              'url' => route('admin.categories.destroy',$category->id),
+              'class' => 'form-inline'))}}
+              {{ Form::submit('Delete Category', array('class' => 'btn btn-link'))}}
+              {{ Form::close()}}
+            </td>
+          </tr>
+          @endforeach
+        </table>
 
   @stop

@@ -13,8 +13,12 @@ class AreasController extends \BaseController {
 	{
 		$areas = \Area::with('city')->get();
 		$cities = \City::all()->lists('name','id');
-		return \View::make('admin.localization.area')
+		$states = \State::all()->lists('name','id');
+		$countries = \Country::all()->lists('name','id');
+		return \View::make('admin.localization.areas')
 						->with('areas', $areas)
+						->with('states', $states)
+						->with('countries', $countries)
 						->with('cities', $cities);
 	}
 

@@ -11,8 +11,10 @@ class PermissionsController extends \BaseController {
 	 */
 	public function index()
 	{
+
 		return \View::make('admin.users.permissions')
-						->with('permissions', \Permission::all());
+						->with('permissions', \Permission::with('roles')->get())
+						->with('roles', \Role::all()->lists('name', 'id'));
 	}
 
 
@@ -42,6 +44,8 @@ class PermissionsController extends \BaseController {
 			$permission->name = \Input::get('name');
 			$permission->display_name = \Input::get('display_name');
 			$permission->save();
+
+			$permission->roles()->attach(\Input::get('role_id'));
 			return \Redirect::back()->with('message','Permission added.');
 		}
 

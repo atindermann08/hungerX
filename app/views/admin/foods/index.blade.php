@@ -18,35 +18,44 @@
       </ul>
     </div>
     @endif
-
-    {{ Form::open(array('url' => route('admin.foods.store'), 'class' => 'form-inline')) }}
-    {{ Form::label('name', 'Name') }}
-    {{ Form::text('name', null, array("class" => "form-control")) }}
-    {{ Form::select(
-      'category_id',
-      $categories,
-      null ,
-      array("class" => "form-control")) }}
-      {{ Form::submit('Add Food', array('class' => 'form-control btn btn-primary')) }}
-      {{ Form::close() }}
-      <hr>
-      <ul>
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Food</th>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        {{ Form::open([
+          'url' => route('admin.foods.store'),
+          'method' => 'POST'
+          ])}}
+          <td>
+            {{ Form::text('name', null, array("class" => "form-control")) }}
+          </td>
+          <td> {{ Form::select('category_id', $categories, null, ['class' => "form-control" ]) }} </td>
+          <td> {{ Form::submit('Add Food', ['class' => 'btn btn-primary btn-block']) }}</td>
+          {{ Form::close() }}
+        </tr>
         @foreach($foods as $food)
-        <li>
-          {{ Form::open(
-            array(
-            'method' => 'DELETE',
-            'url' => route('admin.foods.destroy', $food->id),
-            'class' => 'form-inline'))}}
-            {{ $food->name }}, {{ $food->category->name }}
-            {{ Form::submit('Delete', array('class' => 'btn btn-link'))}}
-            {{ Form::close()}}
-          </li>
+        <tr>
+          <td>
+            {{$food->name}}
+          </td>
+          <td>
+            {{$food->category->name}}
+          </td>
+          <td>
+            {{ Form::open(
+              array(
+              'method' => 'DELETE',
+              'url' => route('admin.foods.destroy',$food->id),
+              'class' => 'form-inline'))}}
+              {{ Form::submit('Delete Food', array('class' => 'btn btn-link'))}}
+              {{ Form::close()}}
+            </td>
+          </tr>
           @endforeach
-        </ul>
-        <hr>
+        </table>
 
-
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
     @stop

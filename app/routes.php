@@ -195,7 +195,7 @@ Route::group(array('prefix' => 'admin'), function()
 		'as' => 'admin.restaurants.delivery_areas.add'
 		]);
 
-	Route::delete('restaurants/{restaurantId}/delivery_areas/remove/{areaId}',[
+	Route::delete('restaurants/{restaurantId}/delivery_areas/destroy/{areaId}',[
 		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@removeFromDeliveryAreas',
 		'as' => 'admin.restaurants.delivery_areas.remove'
 		]);
@@ -203,6 +203,16 @@ Route::group(array('prefix' => 'admin'), function()
 	Route::get('restaurants/{id}/delivery_areas/edit',[
 		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@editDeliveryAreas',
 		'as' => 'admin.restaurants.delivery_areas.edit'
+		]);
+
+	Route::delete('roles/{roleId}/permissions/destroy/{permissionId}',[
+		'uses' => '\HungerExpert\Admin\controllers\RolesController@destroyPermission',
+		'as' => 'admin.roles.permission.destroy'
+		]);
+
+	Route::delete('roles/{roleId}/permissions/store',[
+		'uses' => '\HungerExpert\Admin\controllers\RolesController@storePermission',
+		'as' => 'admin.roles.permission.store'
 		]);
 
 	Route::resource('roles','\HungerExpert\Admin\controllers\RolesController');
@@ -214,4 +224,4 @@ Route::group(array('prefix' => 'admin'), function()
 
 });
 
-Entrust::routeNeedsRole( 'admin/*', array('Super Admin','Admin'), Redirect::to('/users/login')  , false );
+//Entrust::routeNeedsRole( 'admin/*', array('Super Admin','Admin'), Redirect::to('/users/login')  , false );

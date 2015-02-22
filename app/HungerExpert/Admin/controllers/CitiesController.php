@@ -13,9 +13,11 @@ class CitiesController extends \BaseController {
 	{
 		$cities = \City::with('state')->get();
 		$states = \State::all()->lists('name','id');
-		return \View::make('admin.localization.city')
+		$countries = \Country::all()->lists('name','id');
+		return \View::make('admin.localization.cities')
 						->with('states', $states)
-						->with('cities', $cities);
+						->with('cities', $cities)
+						->with('countries', $countries);
 	}
 
 

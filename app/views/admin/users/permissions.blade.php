@@ -19,32 +19,54 @@
       </ul>
     </div>
     @endif
-
-    {{ Form::open(array('url' => route('admin.permissions.store'), 'class' => 'form-inline')) }}
-      {{ Form::label('name') }}
-      {{ Form::text('name', null, array("class" => "form-control", "placeholder"=>"e.g, edit_menu")) }}
-      {{ Form::label('display_name') }}
-      {{ Form::text('display_name', null, array("class" => "form-control", "placeholder"=>"e.g, Edit menu")) }}
-    {{ Form::submit('Add permission', array('class' => 'form-control btn btn-primary')) }}
-    {{ Form::close() }}
-    <hr>
-    <ul>
-      @foreach($permissions as $permission)
-      <li>
-        {{ Form::open(
-          array(
-          'method' => 'DELETE',
-          'url' => route('admin.permissions.destroy', $permission->id),
-          'class' => 'form-inline'))}}
-          {{ $permission->display_name }}({{ $permission->name }})
-          {{ Form::submit('Delete', array('class' => 'btn btn-link'))}}
-          {{ Form::close()}}
-        </li>
-        @endforeach
-      </ul>
-      <hr>
-
-
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Permission</th>
+        <th>Permission Display Name</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        {{ Form::open([
+          'url' => route('admin.permissions.store'),
+          'method' => 'POST'
+          ])}}
+          <td>
+            {{ Form::text('name', null, array("class" => "form-control", "placeholder" => "e.g can_view_data")) }}
+          </td>
+          <td>
+            {{ Form::text('display_name', null, array("class" => "form-control", "placeholder" => "e.g Can View Data")) }}
+          </td>
+          <td> {{ Form::select('role_id', $roles, null, ['class' => "form-control" ]) }} </td>
+          <td> {{ Form::submit('Add Permission', ['class' => 'btn btn-primary btn-block']) }}</td>
+          {{ Form::close() }}
+        </tr>
+        @foreach($permissions as $permission)
+        <tr>
+          <td>
+            {{$permission->name}}
+          </td>
+          <td>
+            {{$permission->display_name}}
+          </td>
+          <td>
+            @foreach($permission->roles as $index =>  $role)
+              @if ($index != 0)
+                ,
+              @endif
+              {{ $role->name }}
+            @endforeach
+          </td>
+          <td>
+            {{ Form::open(
+              array(
+              'method' => 'DELETE',
+              'url' => route('admin.permissions.destroy',$permission->id),
+              'class' => 'form-inline'))}}
+              {{ Form::submit('Delete Permission', array('class' => 'btn btn-link'))}}
+              {{ Form::close()}}
+            </td>
+          </tr>
+          @endforeach
+        </table>
   @stop

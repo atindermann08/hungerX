@@ -13,7 +13,7 @@ class StatesController extends \BaseController {
 	{
 		$states = \State::with('country')->get();
 		$countries = \Country::all()->lists('name','id');
-		return \View::make('admin.localization.state')
+		return \View::make('admin.localization.states')
 						->with('states', $states)
 						->with('countries', $countries);
 	}

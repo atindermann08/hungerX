@@ -11,7 +11,7 @@ class CountriesController extends \BaseController {
 	 */
 	public function index()
 	{
-		return \View::make('admin.localization.country')
+		return \View::make('admin.localization.countries')
 						->with('countries', \Country::all());
 	}
 
