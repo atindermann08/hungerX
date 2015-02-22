@@ -1,9 +1,9 @@
 @extends('layouts.default')
 
 @section('container')
-<div class='container'>
+<div class='container-fluid'>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="page-header">
                 <div class="media">
                   <div class="media-left">
@@ -23,6 +23,7 @@
             <div class="col-md-12">
                     <div class="navbar-right"><b></b></div><p class="list-group-item-text"></p><hr>
                     @foreach ($restaurant->foods as $food)
+                    <div class="col-md-5 col-md-offset-1">
                             <div class="navbar-right">
                                 {{ Form::open(['url' => route('cart.add')]) }}
                                    <b>&#8377; {{$food->pivot->price}}</b>
@@ -39,6 +40,7 @@
                                     {{$food->description}}
                                 </p>
                             <hr>
+                          </div>
                     @endforeach
             </div>
         </div>

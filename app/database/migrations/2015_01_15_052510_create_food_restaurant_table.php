@@ -20,6 +20,7 @@ class CreateFoodRestaurantTable extends Migration {
 			$table->integer('restaurant_id')->unsigned()->index();
 			$table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
 			$table->integer('price');
+			$table->boolean('in_stock')-default(true);
 			$table->timestamps();
 		});
 	}

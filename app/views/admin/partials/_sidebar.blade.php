@@ -41,10 +41,10 @@
 					<a href="#">Accounts</a>
 				</li>
 				<li>
-					<a href="#">Roles</a>
+					<a href="{{ route('admin.roles.index') }}">Roles</a>
 				</li>
 				<li>
-					<a href="#">Permissions</a>
+					<a href="{{ route('admin.permissions.index') }}">Permissions</a>
 				</li>
 			</ul>
 		</li>

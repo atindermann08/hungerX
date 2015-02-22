@@ -9,6 +9,8 @@
 
 		<title>Hunger Expert - Admin panel</title>
 		@section('styles')
+			<link rel="stylesheet" href="{{asset('assets/css/heapp.css')}}">
+
 			<link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}">
 			<link rel="stylesheet" href="{{asset('admin/css/sb-admin.css')}}">
 			<link rel="stylesheet" href="{{asset('admin/css/plugins/morris.css')}}">
@@ -28,7 +30,11 @@
 		<div id="wrapper">
 			<div id="page-wrapper">
 				<div class="container-fluid">
-					@yield('container')
+					<div class="row">
+						<div class='col-md-12'>
+							@yield('container')
+						</div>
+					</div>
 				</div><!-- /.container-fluid -->
 			</div><!-- /#page-wrapper -->
 		</div><!-- /#wrapper -->

@@ -1,9 +1,11 @@
 @extends('admin.layouts.default')
 
 @section('container')
+  <ol class="breadcrumb">
+    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+    <li class="active">Cities</li>
+  </ol>
 
-<div class="row">
-  <div class="col-lg-12">
     <h2>Cities</h2>
     <hr>
 
@@ -48,6 +50,4 @@
 
 
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div>
-  </div>
 @stop

@@ -12,7 +12,7 @@ class RestaurantController extends \BaseController {
 	{
 		$id = Input::get('area');
 		$area = Area::find($id);
-		$restaurants = $area->restaurants;
+		$restaurants = $area->restaurants;//()->where('active', '=', '1')->get();;
 		$city = $area->city;
 		return View::make('restaurant.index',['restaurants' => $restaurants, 'area' => $area, 'city' => $city]);
 	}

@@ -1,16 +1,16 @@
 @extends('admin.layouts.default')
 
 @section('container')
+
     <ol class="breadcrumb">
       <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-      <li class="active">States</li>
-    </ol>
-
-    <h2>States</h2>
+      <li class="active">Permissions</li>
+</ol>
+    <h2>Permissions</h2>
     <hr>
 
     @if($errors->has())
-    <div class="alert alert-warning alert-dismissible" role="alert">
+    <div class="alert alert-warning alert-dismissible" permission="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <strong>Warning!</strong> Following errors occured
       <ul>
@@ -21,26 +21,23 @@
     </div>
     @endif
 
-    {{ Form::open(array('url' => route('admin.states.store'), 'class' => 'form-inline')) }}
-    {{ Form::label('name', 'Name') }}
-    {{ Form::text('name', null, array("class" => "form-control")) }}
-    {{ Form::select(
-      'country_id',
-      $countries,
-      null ,
-      array("class" => "form-control")) }}
-    {{ Form::submit('Add State', array('class' => 'form-control btn btn-primary')) }}
+    {{ Form::open(array('url' => route('admin.permissions.store'), 'class' => 'form-inline')) }}
+      {{ Form::label('name') }}
+      {{ Form::text('name', null, array("class" => "form-control", "placeholder"=>"e.g, edit_menu")) }}
+      {{ Form::label('display_name') }}
+      {{ Form::text('display_name', null, array("class" => "form-control", "placeholder"=>"e.g, Edit menu")) }}
+    {{ Form::submit('Add permission', array('class' => 'form-control btn btn-primary')) }}
     {{ Form::close() }}
     <hr>
     <ul>
-      @foreach($states as $state)
+      @foreach($permissions as $permission)
       <li>
         {{ Form::open(
           array(
           'method' => 'DELETE',
-          'url' => route('admin.states.destroy', $state->id),
+          'url' => route('admin.permissions.destroy', $permission->id),
           'class' => 'form-inline'))}}
-          {{ $state->name }}
+          {{ $permission->display_name }}({{ $permission->name }})
           {{ Form::submit('Delete', array('class' => 'btn btn-link'))}}
           {{ Form::close()}}
         </li>
@@ -51,4 +48,4 @@
 
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-@stop
+  @stop

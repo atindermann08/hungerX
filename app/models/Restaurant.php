@@ -3,7 +3,6 @@
 class Restaurant extends \Eloquent {
 		protected $fillable = [];
 
-
 		public static $rules = [
 			'name' => 'required|min:2|unique:restaurants',
 			'description' => 'required|min:20',
@@ -12,8 +11,8 @@ class Restaurant extends \Eloquent {
 			'min_order' => 'required|numeric',
 			'delivery_fee' => 'required|numeric',
 			'delivery_time' => 'required|numeric',
-			'order_start_time' => 'required|regex:/^[0-2]?[0-9]:[0-9]{2}$/',
-			'order_stop_time' => 'required|regex:/^[0-2]?[0-9]:[0-9]{2}$/',
+			'order_start_time' => 'required|regex:/^[0-2]?[0-9]:[0-6][0-9]:[0-6][0-9]$/',
+			'order_stop_time' => 'required|regex:/^[0-2]?[0-9]:[0-6][0-9]:[0-6][0-9]$/',
 			'online_payment' => 'boolean',
 			'cash_on_delivery' => 'boolean',
 			'preorder' => 'boolean',
@@ -22,10 +21,10 @@ class Restaurant extends \Eloquent {
 		];
 
     public function foods(){
-        return $this->belongsToMany('Food')->withPivot('price');
+        return $this->belongsToMany('Food')->withPivot('price','in_stock');
     }
 
-    public function areas(){
+    public function deliveryAreas(){
         return $this->belongsToMany('Area');
     }
 

@@ -170,6 +170,43 @@ Route::group(array('prefix' => 'admin'), function()
 	Route::resource('foods','\HungerExpert\Admin\controllers\FoodsController');
 	Route::resource('restaurants','\HungerExpert\Admin\controllers\RestaurantsController');
 
+	Route::get('restaurants/{id}/menu/edit',[
+		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@editMenu',
+		'as' => 'admin.restaurants.menu.edit'
+		]);
+
+	Route::delete('restaurants/{restaurantId}/menu/remove/{foodId}',[
+		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@removeFromMenu',
+		'as' => 'admin.restaurants.menu.remove'
+		]);
+
+	Route::post('restaurants/{restaurantId}/menu/toggle/{foodId}',[
+		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@toggleInStock',
+		'as' => 'admin.restaurants.menu.toggle'
+		]);
+
+	Route::post('restaurants/{restaurantId}/menu/add',[
+		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@addToMenu',
+		'as' => 'admin.restaurants.menu.add'
+		]);
+
+	Route::post('restaurants/{restaurantId}/delivery_areas/add',[
+		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@addToDeliveryAreas',
+		'as' => 'admin.restaurants.delivery_areas.add'
+		]);
+
+	Route::delete('restaurants/{restaurantId}/delivery_areas/remove/{areaId}',[
+		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@removeFromDeliveryAreas',
+		'as' => 'admin.restaurants.delivery_areas.remove'
+		]);
+
+	Route::get('restaurants/{id}/delivery_areas/edit',[
+		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@editDeliveryAreas',
+		'as' => 'admin.restaurants.delivery_areas.edit'
+		]);
+
+	Route::resource('roles','\HungerExpert\Admin\controllers\RolesController');
+	Route::resource('permissions','\HungerExpert\Admin\controllers\PermissionsController');
 
 	Route::get('orders',[
 		'uses' => 'AdminController@order',

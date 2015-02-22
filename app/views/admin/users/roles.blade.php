@@ -1,12 +1,12 @@
 @extends('admin.layouts.default')
 
 @section('container')
-    <ol class="breadcrumb">
-      <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-      <li class="active">States</li>
-    </ol>
+  <ol class="breadcrumb">
+    <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+    <li class="active">Roles</li>
+  </ol>
 
-    <h2>States</h2>
+    <h2>Roles</h2>
     <hr>
 
     @if($errors->has())
@@ -21,26 +21,21 @@
     </div>
     @endif
 
-    {{ Form::open(array('url' => route('admin.states.store'), 'class' => 'form-inline')) }}
-    {{ Form::label('name', 'Name') }}
+    {{ Form::open(array('url' => route('admin.roles.store'), 'class' => 'form-inline')) }}
+    {{ Form::label('name') }}
     {{ Form::text('name', null, array("class" => "form-control")) }}
-    {{ Form::select(
-      'country_id',
-      $countries,
-      null ,
-      array("class" => "form-control")) }}
-    {{ Form::submit('Add State', array('class' => 'form-control btn btn-primary')) }}
+    {{ Form::submit('Add Role', array('class' => 'form-control btn btn-primary')) }}
     {{ Form::close() }}
     <hr>
     <ul>
-      @foreach($states as $state)
+      @foreach($roles as $role)
       <li>
         {{ Form::open(
           array(
           'method' => 'DELETE',
-          'url' => route('admin.states.destroy', $state->id),
+          'url' => route('admin.roles.destroy', $role->id),
           'class' => 'form-inline'))}}
-          {{ $state->name }}
+          {{ $role->name }}
           {{ Form::submit('Delete', array('class' => 'btn btn-link'))}}
           {{ Form::close()}}
         </li>
@@ -51,4 +46,4 @@
 
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-@stop
+  @stop
