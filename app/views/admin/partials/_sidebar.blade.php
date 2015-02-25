@@ -5,6 +5,9 @@
 			<a href="{{ route('admin.dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
 		</li>
 		<li>
+			<a href="{{ route('select.city') }}"><i class="fa fa-fw fa-desktop"></i> Front View</a>
+		</li>
+		<li>
 			<a href="{{ route('admin.restaurants.index') }}"><i class="fa fa-fw fa-book"></i> Restaurants</a>
 		</li>
 		<li>
@@ -38,7 +41,7 @@
 			<a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-user"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
 			<ul id="users" class="collapse">
 				<li>
-					<a href="#">Accounts</a>
+					<a href="{{ route('admin.accounts.index') }}">Accounts</a>
 				</li>
 				<li>
 					<a href="{{ route('admin.roles.index') }}">Roles</a>

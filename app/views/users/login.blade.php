@@ -4,7 +4,7 @@
    <div class="row">
         <div class='col-md-4 col-md-offset-4'>
         <h3>Login</h3>
-            <form role="form" method="POST" action="{{{ URL::to('/users/login') }}}" accept-charset="UTF-8" class="page-header">
+            <form role="form" method="POST" action="{{{ URL::to('/accounts/login') }}}" accept-charset="UTF-8" class="page-header">
                 <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
                 <fieldset>
                     <div class="form-group">

@@ -32,6 +32,14 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class='col-md-12'>
+							@if(Session::has('message'))
+								<p class="alert alert-info">{{ Session::get('message') }}</p>
+							@endif
+							@if(Session::has('error'))
+								@foreach(Session::get('error') as $error)
+									<p class="alert alert-info">{{ $error }}</p>
+								@endforeach
+							@endif
 							@yield('container')
 						</div>
 					</div>

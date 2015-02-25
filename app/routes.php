@@ -18,8 +18,8 @@ Route::get('/restaurant/{restaurantId}', array('uses'=>'RestaurantController@sho
 // Confide routes
 Route::get('users/create', ['uses' => 'UsersController@create', 'as' => 'auth.signup' ]);
 Route::post('users', 'UsersController@store');
-Route::get('users/login', ['uses' => 'UsersController@login', 'as' => 'auth.login']);
-Route::post('users/login', 'UsersController@doLogin');
+Route::get('accounts/login', ['uses' => 'UsersController@login', 'as' => 'auth.login']);
+Route::post('accounts/login', 'UsersController@doLogin');
 Route::get('users/confirm/{code}', 'UsersController@confirm');
 Route::get('users/forgot_password', 'UsersController@forgotPassword');
 Route::post('users/forgot_password', 'UsersController@doForgotPassword');
@@ -169,6 +169,7 @@ Route::group(array('prefix' => 'admin'), function()
 	Route::resource('categories','\HungerExpert\Admin\controllers\AdminCategoriesController');
 	Route::resource('foods','\HungerExpert\Admin\controllers\AdminFoodsController');
 	Route::resource('restaurants','\HungerExpert\Admin\controllers\AdminRestaurantsController');
+	Route::resource('accounts','\HungerExpert\Admin\controllers\AdminAccountsController');
 
 	Route::get('restaurants/{id}/menu/edit',[
 		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@editMenu',
