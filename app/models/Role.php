@@ -8,8 +8,4 @@ class Role extends EntrustRole
     'name' => 'required|min:3|unique:roles|regex:/^[a-zA-Z_]*$/'
   ];
 
-
-  public function permissions(){
-    return $this->belongsToMany('Permission');
-  }
 }

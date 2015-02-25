@@ -12,9 +12,8 @@ class RolesController extends \BaseController {
 	public function index()
 	{
 		//why permissions are no showing find out and add option to create users and assign roles
-		return \Response::json(\Role::with('permissions')->first()->permissions());
 		return \View::make('admin.users.roles.index')
-						->with('roles', \Role::with('permissions')->get())
+						->with('roles', \Role::with('perms')->get())
 						->with('permissions', \Permission::all()->lists('display_name', 'id'));
 	}
 
@@ -66,7 +65,7 @@ class RolesController extends \BaseController {
 	public function show($id)
 	{
 		return \View::make('admin.users.roles.show')
-			->with('role', \Role::with('permissions')->find($id))
+			->with('role', \Role::with('perms')->find($id))
 			->with('permissions', \Permission::all()->lists('display_name', 'id'));
 	}
 

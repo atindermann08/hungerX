@@ -35,8 +35,8 @@ class UsersTableSeeder extends Seeder {
         $user->lastname = $faker->lastName();
         $user->mobile = '9999900001';
         $user->email = 'admin@hungerexpert.in';
-        $user->password = 'admin';//hungerexpert
-        $user->password_confirmation = 'hungerexpert';
+        $user->password = 'adminadmin';//hungerexpert
+        $user->password_confirmation = 'adminadmin';
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
         $user->confirmed = true;
 
@@ -84,7 +84,7 @@ class UsersTableSeeder extends Seeder {
         //restaurants
         $user = new User;
         $user->firstname = $faker->firstName();
-        $user->lastname = $faker->lastName();
+        $user->lastname = "lastname";
         $user->mobile = '9999933331';
         $user->email = 'restaurant@hungerexpert.in';
         $user->password = 'restaurant';

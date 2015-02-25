@@ -9,7 +9,7 @@ class RolesTableSeeder extends Seeder {
 	{
 		//super admin
 		$role = new Role;
-		$role->name = 'Super Admin';
+		$role->name = 'SuperAdmin';
 		if(! $role->save()) {
 			Log::info('Unable to create role '.$role->name, (array)$role->errors());
 		} else {

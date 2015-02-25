@@ -237,16 +237,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.2.16",
+            "version": "v4.2.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f"
+                "reference": "3359de6d6cd322e8a1b251c2f8d9dd42a3e4e232"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
-                "reference": "31fe6a5747bbe3c2df21dc4cc8f291e75ab6144f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3359de6d6cd322e8a1b251c2f8d9dd42a3e4e232",
+                "reference": "3359de6d6cd322e8a1b251c2f8d9dd42a3e4e232",
                 "shasum": ""
             },
             "require": {
@@ -257,7 +257,7 @@
                 "jeremeamia/superclosure": "~1.0.1",
                 "monolog/monolog": "~1.6",
                 "nesbot/carbon": "~1.0",
-                "patchwork/utf8": "1.1.*",
+                "patchwork/utf8": "~1.1",
                 "php": ">=5.4.0",
                 "phpseclib/phpseclib": "0.3.*",
                 "predis/predis": "0.8.*",
@@ -348,7 +348,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-12-22 20:56:10"
+            "time": "2015-02-11 20:37:15"
         },
         {
             "name": "monolog/monolog",
@@ -515,16 +515,16 @@
         },
         {
             "name": "patchwork/utf8",
-            "version": "v1.1.28",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tchwork/utf8.git",
-                "reference": "ffa082111aa3cb23cf2479a17e6785ace91da982"
+                "reference": "01f0ed1628db7794e2d4e336f55a09daef4248a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tchwork/utf8/zipball/ffa082111aa3cb23cf2479a17e6785ace91da982",
-                "reference": "ffa082111aa3cb23cf2479a17e6785ace91da982",
+                "url": "https://api.github.com/repos/tchwork/utf8/zipball/01f0ed1628db7794e2d4e336f55a09daef4248a5",
+                "reference": "01f0ed1628db7794e2d4e336f55a09daef4248a5",
                 "shasum": ""
             },
             "require": {
@@ -534,9 +534,15 @@
             "suggest": {
                 "ext-iconv": "Use iconv for best performance",
                 "ext-intl": "Use Intl for best performance",
-                "ext-mbstring": "Use Mbstring for best performance"
+                "ext-mbstring": "Use Mbstring for best performance",
+                "ext-wfio": "Use WFIO for UTF-8 filesystem access on Windows"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Patchwork": "class/",
@@ -562,7 +568,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2015-01-12 08:05:15"
+            "time": "2015-01-29 08:36:50"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -1799,12 +1805,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "81e4eccea302300ac0c69c7ed04c94e29f580633"
+                "reference": "2495d3361ac1e9fc15608a1b33ec2dd41c56b2dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/81e4eccea302300ac0c69c7ed04c94e29f580633",
-                "reference": "81e4eccea302300ac0c69c7ed04c94e29f580633",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/2495d3361ac1e9fc15608a1b33ec2dd41c56b2dc",
+                "reference": "2495d3361ac1e9fc15608a1b33ec2dd41c56b2dc",
                 "shasum": ""
             },
             "require": {
@@ -1843,7 +1849,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2015-01-27 08:16:46"
+            "time": "2015-02-23 10:49:44"
         },
         {
             "name": "gloudemans/shoppingcart",
@@ -1896,12 +1902,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "a8c0e77447877a0a8591ff8e74ad0d14d3ca4c7e"
+                "reference": "68b0f68e06d9399fba8ca45bad1e9816c057774e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/a8c0e77447877a0a8591ff8e74ad0d14d3ca4c7e",
-                "reference": "a8c0e77447877a0a8591ff8e74ad0d14d3ca4c7e",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/68b0f68e06d9399fba8ca45bad1e9816c057774e",
+                "reference": "68b0f68e06d9399fba8ca45bad1e9816c057774e",
                 "shasum": ""
             },
             "require": {
@@ -1944,7 +1950,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2015-02-03 15:44:48"
+            "time": "2015-02-20 15:44:29"
         },
         {
             "name": "laravelbook/ardent",
@@ -2007,16 +2013,16 @@
         },
         {
             "name": "machuga/authority",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/machuga/authority.git",
-                "reference": "b5f111d503e32c02aa07693c84a88ee0db3ee5a7"
+                "reference": "e12c9cb5b2d0624f190ff21d27bd00a1de645b34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/machuga/authority/zipball/b5f111d503e32c02aa07693c84a88ee0db3ee5a7",
-                "reference": "b5f111d503e32c02aa07693c84a88ee0db3ee5a7",
+                "url": "https://api.github.com/repos/machuga/authority/zipball/e12c9cb5b2d0624f190ff21d27bd00a1de645b34",
+                "reference": "e12c9cb5b2d0624f190ff21d27bd00a1de645b34",
                 "shasum": ""
             },
             "require": {
@@ -2057,7 +2063,7 @@
                 }
             ],
             "description": "A simple and flexible authorization system for PHP",
-            "time": "2014-01-21 05:35:49"
+            "time": "2015-02-19 04:30:09"
         },
         {
             "name": "machuga/authority-l4",
@@ -2065,12 +2071,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/machuga/authority-l4.git",
-                "reference": "016ddd3892ec8c07c830f7e34e48bf8c63e022dd"
+                "reference": "42088ee61c478101fd1d51051023690ef5c85435"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/machuga/authority-l4/zipball/016ddd3892ec8c07c830f7e34e48bf8c63e022dd",
-                "reference": "016ddd3892ec8c07c830f7e34e48bf8c63e022dd",
+                "url": "https://api.github.com/repos/machuga/authority-l4/zipball/42088ee61c478101fd1d51051023690ef5c85435",
+                "reference": "42088ee61c478101fd1d51051023690ef5c85435",
                 "shasum": ""
             },
             "require": {
@@ -2123,7 +2129,7 @@
                 "authorization",
                 "laravel"
             ],
-            "time": "2014-03-13 16:49:16"
+            "time": "2015-02-19 04:36:46"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2968,12 +2974,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Zizaco/confide.git",
-                "reference": "2b9d2a0a4e6b1a29417e450dd3450ec1941aca49"
+                "reference": "f9c3d09f68589cc3242a3527464bb871d9815a0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Zizaco/confide/zipball/2b9d2a0a4e6b1a29417e450dd3450ec1941aca49",
-                "reference": "2b9d2a0a4e6b1a29417e450dd3450ec1941aca49",
+                "url": "https://api.github.com/repos/Zizaco/confide/zipball/f9c3d09f68589cc3242a3527464bb871d9815a0f",
+                "reference": "f9c3d09f68589cc3242a3527464bb871d9815a0f",
                 "shasum": ""
             },
             "require": {
@@ -3026,7 +3032,7 @@
                 "illuminate",
                 "laravel"
             ],
-            "time": "2015-02-01 16:57:46"
+            "time": "2015-02-09 18:48:33"
         },
         {
             "name": "zizaco/entrust",

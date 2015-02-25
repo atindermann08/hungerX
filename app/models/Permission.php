@@ -9,7 +9,5 @@ class Permission extends EntrustPermission
     'display_name' => 'required|unique:permissions'
   ];
 
-  public function roles(){
-    return $this->belongsToMany('Role');
-  }
+
 }

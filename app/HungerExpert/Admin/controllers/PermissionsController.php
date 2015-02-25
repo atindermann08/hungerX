@@ -12,7 +12,7 @@ class PermissionsController extends \BaseController {
 	public function index()
 	{
 
-		return \View::make('admin.users.permissions')
+		return \View::make('admin.users.permissions.index')
 						->with('permissions', \Permission::with('roles')->get())
 						->with('roles', \Role::all()->lists('name', 'id'));
 	}

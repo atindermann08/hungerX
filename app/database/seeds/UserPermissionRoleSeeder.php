@@ -20,7 +20,7 @@ class UserPermissionRoleSeeder extends Seeder {
     $customer2 = User::where('email', 'LIKE', 'customer2%')->first();
 
     //get roles
-    $superAdminRole = Role::where('name','=','Super Admin')->first();
+    $superAdminRole = Role::where('name','=','SuperAdmin')->first();
     $adminRole = Role::where('name','=','Admin')->first();
     $employeeRole = Role::where('name','=','Employee')->first();
     $restaurantRole = Role::where('name','=','Restaurant')->first();
