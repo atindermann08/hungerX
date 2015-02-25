@@ -5,6 +5,8 @@
 <h1 class="page-header">Edit Restaurant Details</h1>
 <ol class="breadcrumb">
   <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+  <li><a href="{{ route('admin.restaurants.index') }}">Restaurants</a></li>
+  <li><a href="{{ route('admin.restaurants.show', $restaurant->id) }}">Restaurant Details</a></li>
   <li class="active">Edit Restaurant</li>
 </ol>
 <hr>

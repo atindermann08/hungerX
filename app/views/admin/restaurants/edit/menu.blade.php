@@ -64,7 +64,7 @@
           <tr>
             <th>Food</th>
             <th>Price</th>
-            <th>In Stock</th>
+            <th colspan='2'>In Stock</th>
             <th>Delete</th>
           </tr>
           <tr>
@@ -83,7 +83,7 @@
                 }}
               </td>
               <td>{{ Form::number('price', null, ['class' =>"form-control"]) }}</td>
-              <td>{{ Form::select(
+              <td colspan='2'>{{ Form::select(
                   'in_stock', array( 1 => 'In Stock', 0 => 'Out of Stock'),
                   null ,
                   array("class" => "form-control")
@@ -102,6 +102,8 @@
             </td>
             <td>
               @if($food->pivot->in_stock) In Stock @else Out of Stock @endif
+            </td>
+            <td>
               {{ Form::open(
                 array(
                 'method' => 'POST',
@@ -117,7 +119,7 @@
                 'method' => 'DELETE',
                 'url' => route('admin.restaurants.menu.remove',[$restaurant->id, $food->id]),
                 'class' => 'form-inline'))}}
-                {{ Form::submit('Remove from Menu', array('class' => 'btn btn-link'))}}
+                {{ Form::submit('Remove from Menu', array('class' => 'btn btn-danger btn-block'))}}
                 {{ Form::close()}}
             </td>
           </tr>

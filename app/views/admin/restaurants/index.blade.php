@@ -37,7 +37,7 @@
           <th>Delivery Fee</th>
           <th>Delivery Time</th>
           <th>Active</th>
-          <th>Action</th>
+          <th colspan='2'>Action</th>
         </tr>
         @foreach($restaurants as $restaurant)
 
@@ -72,12 +72,15 @@
                 <a href="#">Inactive</a>
               @endif
             </td>
+            <td>
+              <a href="{{ route('admin.restaurants.show', $restaurant->id) }}" class='btn btn-primary'>Manage</a>
+            </td>
             <td>{{ Form::open(
               array(
               'method' => 'DELETE',
               'url' => route('admin.restaurants.destroy', $restaurant->id),
               'class' => 'form-inline')) }}
-              {{ Form::submit('Delete', array('class' => 'btn btn-link')) }}
+              {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
               {{ Form::close() }}
             </td>
           </tr>

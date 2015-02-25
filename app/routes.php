@@ -158,68 +158,68 @@ Route::group(array('before' => 'customer'), function()
 Route::group(array('prefix' => 'admin'), function()
 {
 	Route::get('dashboard',[
-		'uses' => 'AdminController@dashboard',
+		'uses' => '\HungerExpert\Admin\controllers\AdminController@dashboard',
 		'as' => 'admin.dashboard']);
 
-	Route::resource('countries','\HungerExpert\Admin\controllers\CountriesController');
-	Route::resource('states','\HungerExpert\Admin\controllers\StatesController');
-	Route::resource('cities','\HungerExpert\Admin\controllers\CitiesController');
-	Route::resource('areas','\HungerExpert\Admin\controllers\AreasController');
+	Route::resource('countries','\HungerExpert\Admin\controllers\AdminCountriesController');
+	Route::resource('states','\HungerExpert\Admin\controllers\AdminStatesController');
+	Route::resource('cities','\HungerExpert\Admin\controllers\AdminCitiesController');
+	Route::resource('areas','\HungerExpert\Admin\controllers\AdminAreasController');
 
-	Route::resource('categories','\HungerExpert\Admin\controllers\CategoriesController');
-	Route::resource('foods','\HungerExpert\Admin\controllers\FoodsController');
-	Route::resource('restaurants','\HungerExpert\Admin\controllers\RestaurantsController');
+	Route::resource('categories','\HungerExpert\Admin\controllers\AdminCategoriesController');
+	Route::resource('foods','\HungerExpert\Admin\controllers\AdminFoodsController');
+	Route::resource('restaurants','\HungerExpert\Admin\controllers\AdminRestaurantsController');
 
 	Route::get('restaurants/{id}/menu/edit',[
-		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@editMenu',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@editMenu',
 		'as' => 'admin.restaurants.menu.edit'
 		]);
 
 	Route::delete('restaurants/{restaurantId}/menu/remove/{foodId}',[
-		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@removeFromMenu',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@removeFromMenu',
 		'as' => 'admin.restaurants.menu.remove'
 		]);
 
 	Route::post('restaurants/{restaurantId}/menu/toggle/{foodId}',[
-		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@toggleInStock',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@toggleInStock',
 		'as' => 'admin.restaurants.menu.toggle'
 		]);
 
 	Route::post('restaurants/{restaurantId}/menu/add',[
-		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@addToMenu',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@addToMenu',
 		'as' => 'admin.restaurants.menu.add'
 		]);
 
 	Route::post('restaurants/{restaurantId}/delivery_areas/add',[
-		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@addToDeliveryAreas',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@addToDeliveryAreas',
 		'as' => 'admin.restaurants.delivery_areas.add'
 		]);
 
 	Route::delete('restaurants/{restaurantId}/delivery_areas/destroy/{areaId}',[
-		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@removeFromDeliveryAreas',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@removeFromDeliveryAreas',
 		'as' => 'admin.restaurants.delivery_areas.remove'
 		]);
 
 	Route::get('restaurants/{id}/delivery_areas/edit',[
-		'uses' => '\HungerExpert\Admin\controllers\RestaurantsController@editDeliveryAreas',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@editDeliveryAreas',
 		'as' => 'admin.restaurants.delivery_areas.edit'
 		]);
 
 	Route::delete('roles/{roleId}/permissions/destroy/{permissionId}',[
-		'uses' => '\HungerExpert\Admin\controllers\RolesController@destroyPermission',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRolesController@destroyPermission',
 		'as' => 'admin.roles.permission.destroy'
 		]);
 
 	Route::post('roles/{roleId}/permissions/store',[
-		'uses' => '\HungerExpert\Admin\controllers\RolesController@storePermission',
+		'uses' => '\HungerExpert\Admin\controllers\AdminRolesController@storePermission',
 		'as' => 'admin.roles.permission.store'
 		]);
 
-	Route::resource('roles','\HungerExpert\Admin\controllers\RolesController');
-	Route::resource('permissions','\HungerExpert\Admin\controllers\PermissionsController');
+	Route::resource('roles','\HungerExpert\Admin\controllers\AdminRolesController');
+	Route::resource('permissions','\HungerExpert\Admin\controllers\AdminPermissionsController');
 
 	Route::get('orders',[
-		'uses' => 'AdminController@order',
+		'uses' => '\HungerExpert\Admin\controllers\AdminController@order',
 		'as' => 'admin.order']);
 
 });
