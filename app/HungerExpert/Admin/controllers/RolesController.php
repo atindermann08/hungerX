@@ -44,7 +44,7 @@ class RolesController extends \BaseController {
 			$role->name = \Input::get('name');
 			$role->save();
 
-			$role->permissions()->attach(\Input::get('permission_id'));
+			$role->perms()->attach(\Input::get('permission_id'));
 			return \Redirect::back()->with('message','Role added.');
 		}
 
@@ -64,9 +64,14 @@ class RolesController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		$roles = \Role::with('perms')->find($id);
+		//$perms = $roles->perms;
+		//return \Response::json($perms);
+		$permissions = \Permission::whereNotIn('id', $roles->perms()->lists('permission_id'))->get()->lists('display_name', 'id');
+
 		return \View::make('admin.users.roles.show')
-			->with('role', \Role::with('perms')->find($id))
-			->with('permissions', \Permission::all()->lists('display_name', 'id'));
+			->with('role', $roles)
+			->with('permissions', $permissions);
 	}
 
 
@@ -122,8 +127,6 @@ class RolesController extends \BaseController {
 	*/
 	public function storePermission($roleId)
 	{
-		$role = \Role::find($roleId);
-
 		$rules = [
 			'permission_id' => 'unique:permission_role,permission_id,NULL,id,role_id,'.$roleId
 		];
@@ -132,39 +135,40 @@ class RolesController extends \BaseController {
 
 		if($validator->passes())
 		{
-			if($role)
-			{
-				$role->permissions()->attach(\Input::get('permission_id'));
-					return \Redirect::back()
-					->with('message', 'Permission added to Role.');
-				}
-				return \Redirect::back()
-				->with('message', 'Role does not exist.');
-			}
-
-			return \Redirect::back()
-			->with('message','There were some errors. Please try again later..')
-			->withInput()
-			->withErrors($validator);
-		}
-
-
-		/**
-		* Show the form for removes food from menu.
-		*
-		* @return Response
-		*/
-		public function destroyPermission($roleId, $permissionId)
-		{
 			$role = \Role::find($roleId);
 			if($role)
 			{
-				$role->permissions()->detach($permissionId);
-				return \Redirect::back()
-				->with('message', 'Permission removed from Role.');
+				$role->perms()->attach(\Input::get('permission_id'));
+					return \Redirect::back()
+					->with('message', 'Permission added to Role.');
 			}
-			return \Redirect::back()
-			->with('message', 'Role does not exist.');
+				return \Redirect::back()
+				->with('message', 'Role does not exist.');
 		}
+
+		return \Redirect::back()
+			->with('message','There were some errors. Please try again later..')
+			->withInput()
+			->withErrors($validator);
+	}
+
+
+	/**
+	* Show the form for removes food from menu.
+	*
+	* @return Response
+	*/
+	public function destroyPermission($roleId, $permissionId)
+	{
+		$role = \Role::find($roleId);
+		if($role)
+		{
+			$role->perms()->detach($permissionId);
+			return \Redirect::back()
+			->with('message', 'Permission removed from Role.');
+		}
+		return \Redirect::back()
+		->with('message', 'Role does not exist.');
+	}
 
 }

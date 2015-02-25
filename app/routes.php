@@ -210,7 +210,7 @@ Route::group(array('prefix' => 'admin'), function()
 		'as' => 'admin.roles.permission.destroy'
 		]);
 
-	Route::delete('roles/{roleId}/permissions/store',[
+	Route::post('roles/{roleId}/permissions/store',[
 		'uses' => '\HungerExpert\Admin\controllers\RolesController@storePermission',
 		'as' => 'admin.roles.permission.store'
 		]);

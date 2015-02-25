@@ -22,19 +22,19 @@
 @endif
 <table class="table table-striped table-hover">
   <tr>
-    <th>Permissions</th>
+    <th colspan='2'>Permissions</th>
     <th>Actions</th>
   </tr>
   <tr>
     {{ Form::open([
-      'url' => route('admin.roles.update'),
-      'method' => 'PUT'
+      'url' => route('admin.roles.permission.store', $role->id),
+      'method' => 'POST'
       ])}}
-      <td> {{ Form::select('permission_id', $permissions, null, ['class' => "form-control" ]) }} </td>
-      <td> {{ Form::submit('Add Persmission to Role', ['class' => 'btn btn-warning btn-block']) }}</td>
+      <td colspan='2' colspan='2'> {{ Form::select('permission_id', $permissions, null, ['class' => "form-control" ]) }} </td>
+      <td> {{ Form::submit('Add Permission to Role', ['class' => 'btn btn-warning btn-block']) }}</td>
       {{ Form::close() }}
     </tr>
-    @foreach($role->permissions as $permission)
+    @foreach($role->perms as $permission)
     <tr>
       <td>
         {{$permission->name}}
