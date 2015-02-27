@@ -6,7 +6,11 @@ class AdminController extends \BaseController{
 
 	public function dashboard()
 	{
-		return \View::make('admin.dashboard');
+		return \View::make('admin.dashboard')
+					->with('users',\DB::table('users')->count())
+					->with('restaurants',\DB::table('restaurants')->count())
+					->with('orders',\DB::table('orders')->count())
+					->with('cities',\DB::table('cities')->count());
 	}
 
 	public function food()

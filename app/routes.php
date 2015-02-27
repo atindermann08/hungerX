@@ -239,4 +239,4 @@ Route::group(array('prefix' => 'admin'), function()
 
 });
 
-//Entrust::routeNeedsRole( 'admin/*', array('Super Admin','Admin'), Redirect::to('/users/login')  , false );
+Entrust::routeNeedsRole( 'admin/*', array('SuperAdmin','Admin'), Redirect::route('auth.login')  , false );
