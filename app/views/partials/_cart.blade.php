@@ -1,45 +1,52 @@
-<div id="cd-cart" class="speed-in">
-		<h2 class='glyphicon glyphicon-cutlery'> Your Order</h2>
-		<ul class="cd-cart-items">
-            @if(!isset($cart) || !count($cart))
-                <li>
-                 	<p>
-                 		<br>
-                  		Your Order is empty...
-						<br>
-               		</p>
-                </li>
-            @else
-                @foreach($cart as $item)
-                    <li>
-                        <span class="cd-qty">{{ $item->qty }}x</span> {{ $item->name }}
-                        <div class="cd-price">&#8377; {{ $item->subtotal }}</div>
-                        {{ Form::open(['url' => route('cart.remove')]) }}
-                            {{ Form::hidden('rowid', $item->rowid) }}
-                            {{ Form::hidden('restaurant_id', $restaurant->id) }}
-                            <button type='submit'  class="btn cd-item-remove">
-                                <i class='glyphicon glyphicon-trash'></i>
-                            </button>
-                        {{ Form::close() }}
-                    </li>
-                @endforeach
-            @endif
-		</ul> <!-- cd-cart-items -->
-
-		<div class="cd-cart-total">
-			<p>Total <span>&#8377; {{ $total }}</span></p>
+<div class="panel panel-success">
+	<div class="panel-heading"> <i class='glyphicon glyphicon-cutlery'></i> Your Order</div>
+	<div class="panel-body">
+			@if(!isset($cart) || !count($cart))
+				<p>
+					<br>
+					Your Order is empty...
+					<br>
+				</p>
+			@else
+			<table>
+				@foreach($cart as $item)
+					<tr>
+						<td>
+							<span class=""> {{ $item->qty }} x  </span>
+						</td>
+						<td class='col-md-9'> <b>  {{ $item->name }}  </b> </td>
+						<td>
+							<div class=""> &#8377; {{ $item->subtotal }}</div>
+						</td>
+						<td>
+							{{ Form::open(['url' => route('cart.remove')]) }}
+							{{ Form::hidden('rowid', $item->rowid) }}
+							{{ Form::hidden('restaurant_id', $restaurant->id) }}
+							<button type='submit'  class="btn btn-link">
+								x
+							</button>
+							{{ Form::close() }}
+						</td>
+					</tr>
+					@endforeach
+				</table>
+			@endif
+			<br>
+		<div class="">
+			<p>Total <span class="pull-right">&#8377; {{ $total }}</span></p>
 		</div> <!-- cd-cart-total -->
 
-		<a href="{{ route('cart.review', $restaurant->id) }}" class="checkout-btn 
+		<a href="{{ route('cart.review', $restaurant->id) }}" class="btn btn-success btn-block
 			@if( $total < $restaurant->min_order )
-				btn btn-succcess-o disabled"> Minimum Order is &#8377; {{ $restaurant->min_order }}</a>
+			 disabled"> Minimum Order is &#8377; {{ $restaurant->min_order }}</a>
 			@else
-				">Proceed</a>
+			">Proceed</a>
 			@endif
-		<p class="cd-go-to-cart">
-			<a href="{{route('cart.clear',$restaurant->id)}}" 
-				class='btn btn-danger-o btn-sm @if(!count($cart)) disabled @endif'>
+			<p class="">
+				<a href="{{route('cart.clear',$restaurant->id)}}"
+					class='btn btn-block btn-danger-o btn-sm @if(!count($cart)) disabled @endif'>
 					Clear Cart
-			</a>
-		</p>
-	</div> 
+				</a>
+			</p>
+	</div>
+</div>

@@ -170,6 +170,12 @@ Route::group(array('prefix' => 'admin'), function()
 	Route::resource('foods','\HungerExpert\Admin\controllers\AdminFoodsController');
 	Route::resource('restaurants','\HungerExpert\Admin\controllers\AdminRestaurantsController');
 	Route::resource('accounts','\HungerExpert\Admin\controllers\AdminAccountsController');
+	Route::resource('orders','\HungerExpert\Admin\controllers\AdminOrdersController');
+
+	Route::get('profile', [
+		'uses' => '\HungerExpert\Admin\controllers\AdminController@profile',
+		'as' => 'admin.profile'
+		]);
 
 	Route::get('restaurants/{id}/menu/edit',[
 		'uses' => '\HungerExpert\Admin\controllers\AdminRestaurantsController@editMenu',
@@ -216,12 +222,20 @@ Route::group(array('prefix' => 'admin'), function()
 		'as' => 'admin.roles.permission.store'
 		]);
 
+
+	Route::get('accounts/{id}/addresses/edit',[
+		'uses' => '\HungerExpert\Admin\controllers\AdminAccountsController@editAddresses',
+		'as' => 'admin.accounts.addresses.edit'
+		]);
+	Route::get('accounts/{id}/orders/edit',[
+		'uses' => '\HungerExpert\Admin\controllers\AdminAccountsController@editOrders',
+		'as' => 'admin.accounts.orders.edit'
+		]);
+
 	Route::resource('roles','\HungerExpert\Admin\controllers\AdminRolesController');
 	Route::resource('permissions','\HungerExpert\Admin\controllers\AdminPermissionsController');
 
-	Route::get('orders',[
-		'uses' => '\HungerExpert\Admin\controllers\AdminController@order',
-		'as' => 'admin.order']);
+
 
 });
 

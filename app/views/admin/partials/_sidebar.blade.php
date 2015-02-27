@@ -17,7 +17,7 @@
 			<a href="{{ route('admin.categories.index') }}"><i class="fa fa-fw fa-tags"></i> Categories</a>
 		</li>
 		<li>
-			<a href="{{ route('admin.order') }}"><i class="fa fa-fw fa-money"></i> Orders</a>
+			<a href="{{ route('admin.orders.index') }}"><i class="fa fa-fw fa-money"></i> Orders</a>
 		</li>
 		<li>
 			<a href="javascript:;" data-toggle="collapse" data-target="#locations">
@@ -50,9 +50,6 @@
 					<a href="{{ route('admin.permissions.index') }}">Permissions</a>
 				</li>
 			</ul>
-		</li>
-		<li>
-			<a href=""><i class="fa fa-fw fa-wrench"></i> Settings</a>
 		</li>
 	</ul>
 </div>

@@ -1,7 +1,7 @@
 <?php
 
 class Order extends \Eloquent {
-	protected $fillable = ['user_id', 'restaurant_id', 'address_id', 'pickup', 'delivery_later', 'delivery_date', 'delivery_time', 'payment_status', 'payment_type', 'delivery_status'];
+	protected $fillable = ['user_id', 'restaurant_id', 'address_id', 'pickup', 'delivery_later', 'delivery_date', 'delivery_time', 'payment_status', 'payment_type', 'delivery_status', 'total'];
 
     public function user(){
         return $this->belongsTo('User');

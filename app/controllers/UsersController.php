@@ -63,7 +63,7 @@ class UsersController extends Controller
     public function login()
     {
         if (Confide::user()) {
-            if( Confide::user()->hasRole("Admin") || Confide::user()->hasRole("Super Admin")  ){
+            if( Confide::user()->hasRole("Admin") || Confide::user()->hasRole("SuperAdmin")  ){
               return Redirect::route('admin.dashboard');
             }
             return Redirect::to('/');

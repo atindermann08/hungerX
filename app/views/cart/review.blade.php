@@ -23,7 +23,7 @@
 							  <div class="panel-body">
 								<div class="media">
 								  <div class="media-left">
-									<img class="media-object" src="{{asset('assets/img/restaurants/test.jpg')}}" alt="{{$restaurant->name}}" height='100px'>
+									<img class="media-object img-circle" src="{{asset('assets/img/restaurants/'.$restaurant->id.'.jpg')}}" alt="{{$restaurant->name}}" height='100px'>
 								  </div>
 								  <div class="media-body">
 									<h4 class="media-heading">{{$restaurant->name}}</h4>

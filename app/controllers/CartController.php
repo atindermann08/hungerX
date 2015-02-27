@@ -63,7 +63,6 @@ class CartController extends \BaseController {
 
     public function checkout($restaurantId){
       $cart = Cart::instance($restaurantId)->content();
-
 			$order = Order::create([
 				'user_id' => Confide::user()->id,
 				'restaurant_id' => $restaurantId,
@@ -74,7 +73,8 @@ class CartController extends \BaseController {
 				'delivery_time' => Input::has('delivery_time')?Input::get('delivery_time'):date("H:i:s"),
 				'payment_status' => 'Pending',
 				'payment_type' => 'Online',
-				'delivery_status' => 'Under Processing'
+				'delivery_status' => 'Under Processing',
+				'total' => Cart::instance($restaurantId)->total()
 				]);
 
 			foreach($cart as $key => $item)

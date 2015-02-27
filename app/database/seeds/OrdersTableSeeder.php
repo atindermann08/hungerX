@@ -19,7 +19,8 @@ class OrdersTableSeeder extends Seeder {
             'address_id' => $addressId,
             'payment_status' => 'Pending',
             'payment_type' => 'Online',
-            'delivery_status' => 'Under Processing'
+            'delivery_status' => 'Under Processing',
+						'total' => ((int)(rand(240,1000)/100))*100
         ]);
 
 		foreach(range(1, 15) as $index)
@@ -34,7 +35,8 @@ class OrdersTableSeeder extends Seeder {
 				'address_id' => $addressId,
 				'payment_status' => 'Pending',
 				'payment_type' => 'Online',
-				'delivery_status' => 'Under Processing'
+				'delivery_status' => 'Under Processing',
+				'total' => ((int)(rand(240,1000)/100))*100
 			]);
 		}
 	}

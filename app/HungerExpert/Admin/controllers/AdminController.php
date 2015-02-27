@@ -23,4 +23,9 @@ class AdminController extends \BaseController{
 	{
 		return \View::make('admin.order');
 	}
+	public function profile()
+	{
+		return \View::make('admin.profile')
+				->with('user', \Confide::user());
+	}
 }

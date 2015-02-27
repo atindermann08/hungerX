@@ -5,12 +5,12 @@
   <div class="row">
     @if(count($orders))
       <h3>
-        Your Orders  
+        Your Orders
         <small><i class="location arrow icon"></i><a href='{{url("/")}}'>Order Some more!</a></small>
       </h3>
     @else
       <h3>
-        You have not placed any orders yet. 
+        You have not placed any orders yet.
         <small><i class="location arrow icon"></i><a href='{{url("/")}}'>Order Something</a></small>
       </h3>
     @endif
@@ -26,8 +26,8 @@
 					 <div class="panel-body">
 							<div class="media">
 							  <div class="media-left">
-								  <img class='img-rounded' 
-								  	src="{{asset('assets/img/restaurants/test.jpg')}}" 
+								  <img class='img-circle'
+								  	src="{{asset('assets/img/restaurants/'.$order->restaurant->id.'.jpg')}}"
 								  	alt="{{$order->restaurant->name}}" width='96' height='96' />
 							  </div>
 							  <div class="media-body">
@@ -40,9 +40,9 @@
 									<li>
 										Payment<b> {{$order->payment_status?'Completed':'Pending'}}</b>
 									</li>
-									
+
 									<li>
-										Delivery<strong> {{$order->delivery_status}}</strong>			
+										Delivery<strong> {{$order->delivery_status}}</strong>
 									</li>
 								  </ul>
 							  </div>
@@ -63,4 +63,3 @@
     </div>
     </div></div>
 @stop
-

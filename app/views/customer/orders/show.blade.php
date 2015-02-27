@@ -6,7 +6,7 @@
     <div class="row">
             <div class="col-sm-6 col-md-offset-3">
             	<h3>
-					Your Order Details 
+					Your Order Details
 			  	</h3>
 				<div class="panel panel-success">
 					<div class="panel-heading">
@@ -25,15 +25,15 @@
 									<li>
 										Payment<b> {{$order->payment_status?'Completed':'Pending'}}</b>
 									</li>
-									
+
 									<li>
-										Delivery<strong> {{$order->delivery_status}}</strong>			
+										Delivery<strong> {{$order->delivery_status}}</strong>
 									</li>
 								  </ul>
 							  </div>
 							  <div class="media-right">
-								  <img class='img-rounded' 
-								  	src="{{asset('assets/img/restaurants/test.jpg')}}" 
+								  <img class='img-circle' 
+								  	src="{{asset('assets/img/restaurants/'.$order->restaurant->id.'.jpg')}}"
 								  	alt="{{$order->restaurant->name}}" width='96' height='96' />
 							  </div>
 							</div><hr>
@@ -44,14 +44,14 @@
 							 	<h3 class="media-heading"> Address: {{ $order->address->name }}</h3>
 						 		<h4>{{ Confide::user()->firstname }} {{ Confide::user()->lastname }}</h4>
 
-								House no. {{ $order->address->house_no }}, 
-								{{ $order->address->area->name }}, 
-								{{ $order->address->area->city->name }}, 
-								{{ $order->address->area->city->state->name }}, 
-								{{ $order->address->area->city->state->country->name }}, 
-								{{ $order->address->pin_code }}<br> 
+								House no. {{ $order->address->house_no }},
+								{{ $order->address->area->name }},
+								{{ $order->address->area->city->name }},
+								{{ $order->address->area->city->state->name }},
+								{{ $order->address->area->city->state->country->name }},
+								{{ $order->address->pin_code }}<br>
 								@if($order->address->landmark)
-									Landmark: 
+									Landmark:
 								@endif
 									{{ $order->address->landmark }}
 								</div>
@@ -63,7 +63,7 @@
 							 <div class="navbar-right"><b></b></div><hr></li>
 						 	@foreach($order->items as $item)
 						 		<li>
-                               		<div class="navbar-right">                        
+                               		<div class="navbar-right">
                                 		<b>&#8377; {{$item->price}}</b>
 									</div>
 									<h5>{{$item->name}} x {{$item->quantity}} </h5>
@@ -84,4 +84,3 @@
     </div>
     </div></div>
 @stop
-

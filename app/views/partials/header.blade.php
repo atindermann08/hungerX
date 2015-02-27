@@ -1,5 +1,5 @@
 <div id='menu' class="ui secondary pointing orange inverted menu">
-  <a href="    " class='header item' >
+  <a href="" class='header item' >
     <i class="icon-logo large-logo"></i>
     <span class="logo-header">HungerExpert</span>
   </a>

@@ -41,7 +41,7 @@ Route::filter('customer', function()
 		{
 			return Response::make('Unauthorized', 401);
 		}
-		return Redirect::guest('users/login');
+		return Redirect::guest('accounts/login');
 	}
 });
 

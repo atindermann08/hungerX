@@ -3,7 +3,7 @@
 @section('container')
 <div class='container-fluid'>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="page-header">
                 <div class="media">
                   <div class="media-left">
@@ -44,7 +44,7 @@
                     @endforeach
             </div>
         </div>
-        <div class="col-md-3" >
+        <div class="col-md-4" >
             @include('partials._cart')
         </div>
     </div>
